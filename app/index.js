@@ -16,7 +16,9 @@ Debug.enable("app-data");
 
 startHotAppLoop(module, document.getElementById("app"), store, Routes);
 
-if ('serviceWorker' in navigator) {
+// Used in dev mode for testing
+// if ('serviceWorker' in navigator) {
+if (location.protocol === 'https:' && navigator.serviceWorker) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js').then(registration => {
             // console.log('SW registered: ', registration);
