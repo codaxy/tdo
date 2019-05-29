@@ -11,6 +11,11 @@
             "src": "/assets/favicon.png",
             "sizes": "64x64",
             "type": "image/png"
+        },
+        {
+            "src": "/assets/tdo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ]
   }
