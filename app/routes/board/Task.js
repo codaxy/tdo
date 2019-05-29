@@ -272,7 +272,7 @@ class TaskCmp extends VDOM.Component {
             let swipeEnd = e.changedTouches[0];
 
             //swiping to the left
-            let toDelete = swipeStart.pageX - swipeEnd.pageX > 150 && Math.abs(swipeStart.pageY - swipeEnd.pageY) <= 40;
+            let toDelete = swipeStart.pageX - swipeEnd.pageX > 150 && Math.abs(swipeStart.pageY - swipeEnd.pageY) <= this.dom.el.getBoundingClientRect().height;
 
             if (toDelete) {                
                 let { data, instance } = this.props;
