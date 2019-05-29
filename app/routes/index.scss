@@ -39,6 +39,30 @@
   }
 }
 
+.cxb-button.cxm-login-primary {
+  width: 200px;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.cxb-menuitem.cxs-small-padding {
+  > .cxe-menuitem-arrow {
+    right: 0;
+  }
+}
+
+.cxb-menuitem.cxs-medium-padding {
+  > a {
+    margin-top: 5px;
+  }
+}
+
+.cxb-dropdown {
+  font-size: 12px;
+}
+
+
 @import "board/index";
 @import "settings/index";
 @import "help/index";
