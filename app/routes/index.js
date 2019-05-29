@@ -5,6 +5,7 @@ import Board from './board';
 import Settings from './settings';
 import SignIn from './signIn';
 import Help from './help';
+import NewBoard from "./new";
 import Controller from './Controller';
 import "./keyboard-shortcuts";
 
@@ -20,8 +21,7 @@ const BoardItems = <cx>
             <MenuItem
                 autoClose
                 mod={{
-                    active: { expr: '{url}=="~/b/" + {$record.id}' },
-                    test: true
+                    active: { expr: '{url}=="~/b/" + {$record.id}' }
                 }}
                 pad
             >
@@ -33,8 +33,8 @@ const BoardItems = <cx>
             </MenuItem>
         </Repeater>
 
-        <MenuItem pad>
-            <a href="#" onClick="onAddBoard">Add Board</a>
+        <MenuItem pad mod={{ active: { expr: '{url}=="~/new"' } }}>
+            <Link href="~/new">Add Board</Link>
         </MenuItem>
 
         <div class="spacer" visible-expr="{layout.mode}=='desktop'" />
@@ -116,6 +116,9 @@ export default <cx>
                 </Route>
                 <Route url-bind="url" route="~/help">
                     <Help />
+                </Route>
+                <Route url-bind="url" route="~/new">
+                    <NewBoard />
                 </Route>
                 <Route url-bind="url" route="~/b/:boardId">
                     <Board />
