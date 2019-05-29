@@ -3,7 +3,8 @@ var webpack = require("webpack"),
   CopyWebpackPlugin = require("copy-webpack-plugin"),
   merge = require("webpack-merge"),
   common = require("./webpack.config"),
-  path = require("path");
+  path = require("path"),
+  WorkboxPlugin = require('workbox-webpack-plugin');
 
 var specific = {
   mode: "production",
@@ -39,7 +40,13 @@ var specific = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[name].css"
-    })
+    }),
+    // new WorkboxPlugin.GenerateSW({
+        //     // these options encourage the ServiceWorkers to get in there fast 
+        //     // and not allow any straggling "old" SWs to hang around
+        //     clientsClaim: true,
+        //     skipWaiting: true
+        // })
   ],
 
   output: {

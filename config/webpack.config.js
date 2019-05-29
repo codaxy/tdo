@@ -2,6 +2,7 @@ const webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     path = require('path'),
     babelCfg = require("./babel.config"),
+    WorkboxPlugin = require('workbox-webpack-plugin'),
     paths = {
         root: path.join(__dirname, '../'),
         app: path.join(__dirname, '../app/'),
@@ -50,6 +51,12 @@ module.exports = {
         // }),
         new HtmlWebpackPlugin({
             template: paths.app + 'index.html'
+        }),
+        new WorkboxPlugin.GenerateSW({
+            // these options encourage the ServiceWorkers to get in there fast 
+            // and not allow any straggling "old" SWs to hang around
+            clientsClaim: true,
+            skipWaiting: true
         })
     ]
 };
