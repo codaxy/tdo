@@ -116,6 +116,7 @@ export default <cx>
                                             isNew-expr="{newTaskId}=={$task.id}"
                                             onKeyDown="onTaskKeyDown"
                                             onSave="onSaveTask"
+                                            onSwipeLeft="onDeleteTask"
                                         />
                                     </DragSource>
                                 </MenuItem>

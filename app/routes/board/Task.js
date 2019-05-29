@@ -25,7 +25,8 @@ export class Task extends Widget {
             task: undefined,
             styleRules: undefined,
             autoFocus: undefined,
-            isNew: undefined
+            isNew: undefined,
+            onSwipeLeft: undefined
         })
     }
 
@@ -42,7 +43,8 @@ class TaskCmp extends VDOM.Component {
 
         this.state = {
             edit: props.data.isNew,
-            scrollHeight: null
+            scrollHeight: null,
+            swipeStart: null
         };
 
         this.dom = {};
@@ -68,6 +70,8 @@ class TaskCmp extends VDOM.Component {
             tabIndex={0}
             onClick={this.onClick.bind(this)}
             onTouchStart={this.onTouchStart.bind(this)}
+            onTouchEnd={this.onTouchEnd.bind(this)}
+            onTouchMove={this.onTouchMove.bind(this)}
             onDoubleClick={e => {
                 this.toggleEditMode()
             }}
@@ -240,6 +244,42 @@ class TaskCmp extends VDOM.Component {
             this.toggleEditMode();
             e.stopPropagation();
             e.preventDefault();
+        }
+
+        if (!this.state.edit && e.changedTouches && e.changedTouches.length == 1) {
+            this.setState({
+                swipeStart: e.changedTouches[0],
+                position: this.dom.el.parentElement.getBoundingClientRect().left
+            });
+        }
+    }
+
+    onTouchMove(e) {
+        if (!this.state.edit) {
+            let start = this.state.swipeStart.pageX;
+            let source = this.dom.el.parentElement;
+            let distance = start - e.changedTouches[0].pageX;
+
+            source.parentElement.style.overflow = 'hidden';
+            source.style.position = 'relative';
+            source.style.left = -distance + 'px';
+        }
+    }
+
+    onTouchEnd(e) {
+        if (this.state.swipeStart) {
+            let swipeStart = this.state.swipeStart;
+            let swipeEnd = e.changedTouches[0];
+
+            //swiping to the left
+            let toDelete = swipeStart.pageX - swipeEnd.pageX > 150 && Math.abs(swipeStart.pageY - swipeEnd.pageY) <= 40;
+
+            if (toDelete) {                
+                let { data, instance } = this.props;
+                instance.invoke("onSwipeLeft", data.task, instance);
+            } else {
+                this.dom.el.parentElement.style.left = '';
+            }
         }
     }
 
