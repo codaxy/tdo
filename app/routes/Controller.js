@@ -217,6 +217,13 @@ export default ({ store, get, set, init }) => {
             boardTracker.update(board.id, {
                 edit: true
             })
+        },
+
+        signOut(e) {
+            e.preventDefault();
+            auth.signOut().then(() => {
+                window.location.reload();
+            });
         }
     }
 }

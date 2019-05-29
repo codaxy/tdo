@@ -29,41 +29,4 @@ export default class extends Controller {
         let style = store.get('$record');
         this.store.update('settings.taskStyles', styles => styles.filter(x => x != style));
     }
-
-    signInWithGoogle(e) {
-        e.preventDefault();
-        let provider = new firebase.auth.GoogleAuthProvider();
-        this.signInWithProvider(provider);
-    }
-
-    signInWithTwitter(e) {
-        e.preventDefault();
-        let provider = new firebase.auth.TwitterAuthProvider();
-        this.signInWithProvider(provider);
-    }
-
-    signInWithGitHub(e) {
-        e.preventDefault();
-        let provider = new firebase.auth.GithubAuthProvider();
-        this.signInWithProvider(provider);
-    }
-
-    signInWithProvider(provider) {
-        auth
-            .signInWithPopup(provider)
-            .catch(error => {
-                toast({
-                    message: `Login failed with error code ${error.code}. ${error.message}`,
-                    timeout: 15000,
-                    mod: "error"
-                });
-            });
-    }
-
-    signOut(e) {
-        e.preventDefault();
-        auth.signOut().then(() => {
-            window.location.reload();
-        });
-    }
 }

@@ -3,6 +3,7 @@ import { FirstVisibleChildLayout, executeKeyboardShortcuts } from 'cx/ui';
 
 import Board from './board';
 import Settings from './settings';
+import SignIn from './signIn';
 import Help from './help';
 import Controller from './Controller';
 import "./keyboard-shortcuts";
@@ -56,9 +57,21 @@ const MenuItems = <cx>
 
         <div class="spacer" visible-expr="{layout.mode}=='desktop'" />
         <hr visible-expr="{layout.mode}!='desktop'" />
-
         <MenuItem pad>
             <a href="https://github.com/codaxy/tdo" target="_blank">Report/Suggest</a>
+        </MenuItem>
+
+        <div class="spacer" visible-expr="{layout.mode}=='desktop'" />
+        <MenuItem pad>
+            <Link href="~/signIn" visible-expr="{user.anonymous}">
+                SignIn
+            </Link>
+            <Submenu visible-expr="!{user.anonymous}" arrow>
+                <strong text-tpl="{user.displayName}" /> 
+                <MenuItem putInto="dropdown">
+                    <Link href="#" onClick="signOut">Sign Out</Link>
+                </MenuItem> 
+            </Submenu>
         </MenuItem>
     </PureContainer>
 </cx>;
@@ -105,6 +118,9 @@ export default <cx>
                 </Route>
                 <Route url-bind="url" route="~/b/:boardId">
                     <Board />
+                </Route>
+                <Route url-bind="url" route="~/signIn">
+                    <SignIn />
                 </Route>
             </main>
         </Sandbox>

@@ -5,24 +5,7 @@ import Controller from './Controller';
 
 export default <cx>
     <div class="cxb-settings" controller={Controller}>
-        <h2>Settings</h2>
-
-        <h3>Account</h3>
-        <div visible-expr="{user.anonymous}">
-            <p ws>
-                Your data is saved to the database using a temporary user account.
-                You may loose access if you clear the local storage data from your browser.
-                Please sign in to use the application on multiple devices or browsers.
-            </p>
-            <a onClick="signInWithGoogle" href="#">Sign in with Google</a>
-        </div>
-        <div visible-expr="!{user.anonymous}">
-            <p ws>
-                You are signed in as <strong text-tpl="{user.displayName} ({user.email})" />.
-            </p>
-            <a onClick="signOut" href="#">Sign Out</a>
-        </div>
-
+        <h2>Settings</h2>    
 
         <h3>Maintenance</h3>
 
