@@ -67,7 +67,7 @@ const MenuItems = <cx>
                 SignIn
             </Link>
             <Submenu visible-expr="!{user.anonymous}" arrow>
-                <strong text-tpl="{user.displayName}" /> 
+                <a text-tpl="{user.displayName}" />
                 <MenuItem putInto="dropdown">
                     <Link href="#" onClick="signOut">Sign Out</Link>
                 </MenuItem> 
