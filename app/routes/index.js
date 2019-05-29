@@ -18,6 +18,7 @@ const BoardItems = <cx>
             keyField="id"
         >
             <MenuItem
+                autoClose
                 mod={{
                     active: { expr: '{url}=="~/b/" + {$record.id}' },
                     test: true
