@@ -248,18 +248,16 @@ class TaskCmp extends VDOM.Component {
 
         if (!this.state.edit && e.changedTouches && e.changedTouches.length == 1) {
             this.setState({
-                swipeStart: e.changedTouches[0],
-                position: this.dom.el.parentElement.getBoundingClientRect().left
+                swipeStart: e.changedTouches[0]
             });
         }
     }
 
     onTouchMove(e) {
         if (!this.state.edit) {
-            let start = this.state.swipeStart.pageX;
-            let source = this.dom.el.parentElement;
-            let distance = start - e.changedTouches[0].pageX;
+            let distance = this.state.swipeStart.pageX - e.changedTouches[0].pageX;
 
+            let source = this.dom.el.parentElement;
             source.parentElement.style.overflow = 'hidden';
             source.style.position = 'relative';
             source.style.left = -distance + 'px';
