@@ -46,6 +46,7 @@ var specific = {
         // and not allow any straggling "old" SWs to hang around
         clientsClaim: true,
         skipWaiting: true,
+        exclude: [/_redirects/],
         runtimeCaching: [{
             urlPattern: /^https/,
             handler: "NetworkFirst"
