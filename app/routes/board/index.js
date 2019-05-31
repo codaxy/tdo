@@ -116,7 +116,7 @@ export default <cx>
                                             isNew-expr="{newTaskId}=={$task.id}"
                                             onKeyDown="onTaskKeyDown"
                                             onSave="onSaveTask"
-                                            onSwipeLeft="onDeleteTask"
+                                            onSwipe="onDeleteTask"
                                         />
                                     </DragSource>
                                 </MenuItem>
@@ -132,7 +132,6 @@ export default <cx>
                                     matchHeight
                                 />
                             </Repeater>
-
                             <a class="cxe-tasklist-add" onClick="onAddTask" href="#">Add Task</a>
                         </Menu>
                     </DragSource>
