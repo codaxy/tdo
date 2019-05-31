@@ -25,7 +25,8 @@ export class Task extends Widget {
             task: undefined,
             styleRules: undefined,
             autoFocus: undefined,
-            isNew: undefined
+            isNew: undefined,
+            onSwipeLeft: undefined
         })
     }
 
@@ -42,7 +43,8 @@ class TaskCmp extends VDOM.Component {
 
         this.state = {
             edit: props.data.isNew,
-            scrollHeight: null
+            scrollHeight: null,
+            swipeStart: null
         };
 
         this.dom = {};
@@ -68,6 +70,8 @@ class TaskCmp extends VDOM.Component {
             tabIndex={0}
             onClick={this.onClick.bind(this)}
             onTouchStart={this.onTouchStart.bind(this)}
+            onTouchEnd={this.onTouchEnd.bind(this)}
+            onTouchMove={this.onTouchMove.bind(this)}
             onDoubleClick={e => {
                 this.toggleEditMode()
             }}
@@ -240,6 +244,47 @@ class TaskCmp extends VDOM.Component {
             this.toggleEditMode();
             e.stopPropagation();
             e.preventDefault();
+        }
+
+        if (!this.state.edit && e.changedTouches && e.changedTouches.length == 1) {
+            this.setState({
+                swipeStart: e.changedTouches[0]
+            });
+        }
+    }
+
+    onTouchMove(e) {
+        if (this.state.swipeStart) {
+            e.preventDefault();
+            e.stopPropagation();
+            let distance = this.state.swipeStart.pageX - e.changedTouches[0].pageX;
+            let source = this.dom.el.parentElement;
+            source.parentElement.style.overflow = 'hidden';
+            source.style.position = 'relative';
+            source.style.left = -distance + 'px';
+            source.style.opacity = `${Math.min(1, Math.max(1 - Math.abs(distance) / 150, 0)).toFixed(2)}`
+        }
+    }
+
+    onTouchEnd(e) {
+        if (this.state.swipeStart) {
+            let swipeStart = this.state.swipeStart;
+            let swipeEnd = e.changedTouches[0];
+
+            //swipe 150px to delete
+            let toDelete = Math.abs(swipeStart.pageX - swipeEnd.pageX) > 150 && Math.abs(swipeStart.pageY - swipeEnd.pageY) <= this.dom.el.offsetHeight;
+
+            if (toDelete) {                
+                let { data, instance } = this.props;
+                instance.invoke("onSwipe", data.task, instance, swipeEnd.pageX - swipeStart.pageX >= 150 ? "right" : "left");
+            } else {
+                this.dom.el.parentElement.style.left = null;
+                this.dom.el.parentElement.style.opacity = null;
+            }
+
+            this.setState({
+                swipeStart: null
+            })
         }
     }
 

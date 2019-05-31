@@ -213,6 +213,10 @@ export default ({ store, ref, get, set }) => {
             taskTracker.update(task.id, task);
         },
 
+        onDeleteTask(task) {
+            deleteTask(task);
+        },
+
         onAddTask(e, { store }) {
             e.preventDefault();
             let listId = store.get("$list.id");
