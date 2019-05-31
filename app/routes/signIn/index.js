@@ -29,6 +29,9 @@ export default
                     <LinkButton mod="login-primary" href="#" onClick="signInWithGitHub">
                         SignIn with Github
                     </LinkButton>
+                    <LinkButton mod="login-primary" href="#" onClick="signInWithMicrosoft">
+                        SignIn with Microsoft
+                    </LinkButton>
                 </div>
             </form>
         </div>

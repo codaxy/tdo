@@ -39,6 +39,12 @@ export default class extends Controller {
         this.signInWithProvider(provider);
     }
 
+    signInWithMicrosoft(e) {
+        e.preventDefault();
+        let provider = new firebase.auth.OAuthProvider('microsoft.com');
+        this.signInWithProvider(provider);
+    }
+
     signInWithProvider(provider) {
         auth
             .signInWithPopup(provider)
