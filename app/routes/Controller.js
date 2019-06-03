@@ -1,11 +1,12 @@
 import { History, ResizeManager } from "cx/ui";
-import uid from "uid";
 import { firestore } from "../data/db/firestore";
 import { auth } from "../data/db/auth";
 import { isNonEmptyArray } from "cx/util";
 import { UserBoardTracker } from "../data/UserBoardsTracker";
 import { registerKeyboardShortcuts } from "./keyboard-shortcuts";
 import { Toast, Button, Text } from "cx/widgets";
+import { firebase } from "./../data/db/firebase";
+
 
 //TODO: For anonymous users save to local storage
 
@@ -34,28 +35,24 @@ export default ({ store, get, set, init }) => {
             });
 
             auth.onAuthStateChanged(user => {
-                if (user) {
-                    this.store.set(
-                        "user",
-                        {
-                            email: user.email,
-                            displayName: user.displayName,
-                            photoURL: user.photoURL,
-                            id: user.uid
-                        }
-                    );
+
+                if (!user) {
+                    this.signInAnonymously();
+                    return;
                 }
-                else {
-                    let userId = localStorage.getItem("anonymousUserId");
-                    if (!userId) {
-                        userId = uid();
-                        localStorage.setItem("anonymousUserId", userId);
-                        console.warn("Creating anonymous user", userId);
-                    }
+
+                if (user.isAnonymous) {
                     this.store.set("user", {
-                        id: userId,
+                        id: user.uid,
                         name: "Anonymous",
                         anonymous: true
+                    });
+                } else {
+                    this.store.set("user", {
+                        email: user.email,
+                        displayName: user.displayName,
+                        photoURL: user.photoURL,
+                        id: user.uid
                     });
                 }
             });
@@ -98,6 +95,10 @@ export default ({ store, get, set, init }) => {
             }, true);
 
             this.unregisterKeyboardShortcuts = registerKeyboardShortcuts(store);
+        },
+
+        signInAnonymously() {
+            firebase.auth().signInAnonymously();
         },
 
         onDestroy() {
