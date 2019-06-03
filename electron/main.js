@@ -90,14 +90,14 @@ function initialize() {
     }
 
     function registerGlobalShortcuts() {
-        const ret = globalShortcut.register("Control+Shift+enter", () => showWindow());
+        const ret = globalShortcut.register("Control+Shift+insert", () => showWindow());
 
         if (!ret) {
             console.log("registration failed");
         }
 
         // Check whether a shortcut is registered.
-        console.log(globalShortcut.isRegistered("Control+Shift+enter"));
+        console.log(globalShortcut.isRegistered("Control+Shift+insert"));
     }
 
     // This method will be called when Electron has finished
@@ -149,7 +149,7 @@ function makeSingleInstance() {
 
 app.on("will-quit", () => {
     // Unregister a shortcut.
-    // globalShortcut.unregister("Control+Shift+enter");
+    // globalShortcut.unregister("Control+Shift+insert");
 
     // Unregister all shortcuts.
     globalShortcut.unregisterAll()
