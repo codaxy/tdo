@@ -1,13 +1,12 @@
 import { Controller } from 'cx/ui';
 import { append } from 'cx/data';
 import { firestore } from "../../data/db/firestore";
-import { auth } from "../../data/db/auth";
-import { firebase } from "../../data/db/firebase";
 import { showErrorToast, toast } from "../../components/toasts";
+import {debounce} from "cx/util";
 
 export default class extends Controller {
     onInit() {
-        this.addTrigger('saveSettings', ['settings'], settings => {
+        this.addTrigger('saveSettings', ['settings'], debounce(settings => {
             if (!this.store.get('settingsLoaded'))
                 return;
             let userId = this.store.get('user.id')
@@ -16,7 +15,7 @@ export default class extends Controller {
                 .doc(userId)
                 .set(settings)
                 .catch(showErrorToast);
-        })
+        }, 3000))
     }
 
     addTaskStyle(e) {
