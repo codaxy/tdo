@@ -1,6 +1,8 @@
 # tdo
 
-A hackable TODO list with many features:
+A hackable TODO list suitable for handling many little tasks.
+
+Features:
 
 - task boards
 - Markdown support
@@ -29,5 +31,4 @@ yarn start
 ```
 
 If you don't use yarn yet, npm will do too.
-
 
