@@ -16,8 +16,13 @@ export function registerKeyboardShortcuts(store) {
             return;
         e.preventDefault();
         e.stopPropagation();
-        let searchEl = document.getElementById("search");
-        FocusManager.focusFirst(searchEl);
+        if (!e.shiftKey) {
+            let searchEl = document.getElementById("search");
+            FocusManager.focusFirst(searchEl);
+        }
+        else {
+            History.pushState({}, null, "~/help");
+        }
     });
 
     //go to the previous board {

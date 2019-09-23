@@ -28,7 +28,7 @@ export default {
             tasks: [{
                 name: `Use Markdown to make some text **bold** or *italic*`,
             }, {
-                name: `You can also use other Markdown features such as [links](https://github.com/mstijak/tdo) or lists.`
+                name: `You can also use other Markdown features such as [links](https://github.com/codaxy/tdo) or lists.`
             }, {
                 name: `You can customize task highlighting in Settings. #idea`,
             }, {

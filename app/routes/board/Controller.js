@@ -18,17 +18,13 @@ export default ({ store, ref, get, set }) => {
     let maintenancePerformed = false;
 
     const refreshTasks = () => {
-        let searchTerms = null;
         let search = get("search");
-
-        if (search && search.query)
-            searchTerms = search.query.split(" ").filter(Boolean).map(w => new RegExp(w, "gi"));
+        let searchPredicate = search && search.query ? getSearchQueryPredicate( search.query) : null;
 
         tasks.set(taskTracker.index.filter(t => {
             if (t.deleted)
                 return false;
-
-            return !searchTerms || t.isNew || (t.name && searchTerms.every(ex => t.name.match(ex)));
+            return !searchPredicate || t.isNew || (t.name && searchPredicate(t.name));
         }));
 
         if (!maintenancePerformed) {

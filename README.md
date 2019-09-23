@@ -5,11 +5,13 @@ A hackable TODO list with many features:
 - task boards
 - Markdown support
 - keyboard based navigation
-- use of hashtags for task highlighting
+- search
+- regex based task highlighting
 - automatic removal of completed items
 - custom CSS for boards and lists
 - Google Firebase based authentication and storage
 - offline mode
+- drag & drop
 
 ![Screenshot](/assets/screenshot.png)
 
