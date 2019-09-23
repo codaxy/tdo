@@ -1,20 +1,19 @@
 # tdo
 
-A flexible TODO list with the following features:
+A hackable TODO list with many features:
 
+- task boards
 - Markdown support
-- Keyboard navigation
-- Use of hashtags for categories, priorities, etc
-- Auto remove completed items after period of time
-- CSS hackability: write functions to assign CSS styles andclasses to tasks and lists
-- Gist storage
-- Ability to work with a large number of tasks
+- keyboard based navigation
+- use of hashtags for task highlighting
+- automatic removal of completed items
+- custom CSS for boards and lists
+- Google Firebase based authentication and storage
+- offline mode
 
 ![Screenshot](/assets/screenshot.png)
 
 [Open](https://tdo.cxjs.io)
-
-Also available as a [Chrome extension](https://chrome.google.com/webstore/detail/tdo/aaaabkbhklmpmlnjnbicdahijpkgnkfk).
 
 ## Install & Run
 
@@ -29,9 +28,4 @@ yarn start
 
 If you don't use yarn yet, npm will do too.
 
-### Thanks
 
-Thanks to CircleCI the app is auto deployed to GH Pages.
- 
-Thanks to https://github.com/Villanuevand/deployment-circleci-gh-pages for 
-providing instructions for setting up CircleCI.
