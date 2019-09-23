@@ -20,10 +20,11 @@ export class CollectionTracker<T extends HasId> {
         this.unsubscribe = this.collection
             .onSnapshot(snapshot => {
                 let dirty = false;
-                snapshot.forEach(doc => {
+                snapshot.docChanges().forEach(({doc}) => {
                     let data: any = doc.data();
-                    if (this.index.index({ ...data }))
+                    if (this.index.index({ ...data })) {
                         dirty = true;
+                    }
                 });
                 if (dirty)
                     this.onUpdate();

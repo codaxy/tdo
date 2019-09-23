@@ -15,6 +15,7 @@ export class BoardTasksTracker extends CollectionTracker<Task> {
     }
 
     reorderList(listId, suppressUpdate?: boolean) {
+        let batch = firestore.batch();
         let dirty = false;
         this.index
             .filter(t => t.listId == listId && !t.deleted)
@@ -25,6 +26,7 @@ export class BoardTasksTracker extends CollectionTracker<Task> {
             });
         if (dirty && !suppressUpdate)
             this.onUpdate();
+        return batch.commit();
     }
 
     getListTasksSorted(listId) {
