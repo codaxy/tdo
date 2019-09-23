@@ -17,6 +17,7 @@ export class CollectionTracker<T extends HasId> {
 
     start() {
         this.stop();
+        let loaded = false;
         this.unsubscribe = this.collection
             .onSnapshot(snapshot => {
                 let dirty = false;
@@ -26,8 +27,9 @@ export class CollectionTracker<T extends HasId> {
                         dirty = true;
                     }
                 });
-                if (dirty)
+                if (dirty || !loaded)
                     this.onUpdate();
+                loaded = true;
             });
     }
 

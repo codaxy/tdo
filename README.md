@@ -14,6 +14,7 @@ Features:
 - Google Firebase based authentication and storage
 - offline mode
 - drag & drop
+- touch support
 
 ![Screenshot](/assets/screenshot.png)
 
