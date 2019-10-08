@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "package-win": "electron-packager . tdo --out=dist --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/ico/favicon.ico",
-    "dev": "electron . --debug"
+    "dev": "electron . --debug",
+    "setup": "electron-installer-windows --src dist/tdo-win32-ia32/ --dest dist/installers/"
   },
   "author": "Nebojsa Peric",
   "license": "MIT",
