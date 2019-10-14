@@ -71,6 +71,20 @@ function initialize() {
         mainWindow.focus();
     };
 
+    let tray = null,
+        launchOnStartup = false;
+
+    let settings = app.getLoginItemSettings();
+    if (settings) {
+        launchOnStartup = settings.openAtLogin;
+    } else {
+        //the app should auto start
+        app.setLoginItemSettings({
+            openAtLogin: true,
+            path: electron.app.getPath("exe")
+        });
+    }
+
     function createTray() {
         tray = new Tray(getIconPath("favicon16x16.png"));
 
@@ -82,7 +96,22 @@ function initialize() {
                     isQuiting = true;
                     app.quit();
                 }
-            }
+            },
+            {
+                label: 'Launch on startup',
+                checked: launchOnStartup,
+                type: 'checkbox',
+                click: (item) => {
+                    app.setLoginItemSettings({
+                        openAtLogin: item.checked
+                    });
+                }
+            },
+            {
+                label: 'Developer tools', click: () => {
+                    mainWindow.webContents.openDevTools();
+                }
+            }, 
         ]);
 
         tray.setToolTip("Tdo...");
