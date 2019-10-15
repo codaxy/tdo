@@ -1998,11 +1998,12 @@ cx-react@^17.10.0:
   version "17.10.0"
   resolved "https://registry.yarnpkg.com/cx-react/-/cx-react-17.10.0.tgz#9ef22248f0f37aeae4450a7318c3a083d59fda8b"
 
-cx@^19.3.2:
-  version "19.3.2"
-  resolved "https://registry.yarnpkg.com/cx/-/cx-19.3.2.tgz#1e7a3cb8fadb383071a088ce3e8d372f26711775"
+cx@^19.10.5:
+  version "19.10.5"
+  resolved "https://registry.yarnpkg.com/cx/-/cx-19.10.5.tgz#fe14ae002f95ef2f6ea5f3462a5e646ea00d8859"
+  integrity sha512-DCQyn3uTi7iYUT7UVe0JIU5Cxr29njncSq566V5jtJUM2UV9lzGJGU8YLJH4jB9FI+AzEYvUiagcTqr9lpC1tQ==
   dependencies:
-    intl-io "^0.2.11"
+    intl-io "^0.3.0"
     route-parser "^0.0.5"
 
 cyclist@~0.2.2:
@@ -3202,9 +3203,10 @@ interpret@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
-intl-io@^0.2.11:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/intl-io/-/intl-io-0.2.11.tgz#2afeb409fcebc30d2c588b465f141679935e31f8"
+intl-io@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/intl-io/-/intl-io-0.3.0.tgz#2207e6f90377241e322b3d5dc100633e3fb2bff9"
+  integrity sha512-fsiAEyhgrGLI1B7wB0/hMVxBDlc4IprTmrTibxOuUkHtY6nf/Mg6O0BzRXq2T9B7v2PqMtyrcdGqu5kEUgksMA==
 
 invariant@^2.2.2:
   version "2.2.2"

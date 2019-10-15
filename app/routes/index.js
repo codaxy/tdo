@@ -94,6 +94,7 @@ export default <cx>
                     id="search"
                     autoFocus
                     inputAttrs={{ autoComplete: "off" }}
+                    showClear
                 />
 
                 <Menu horizontal>
