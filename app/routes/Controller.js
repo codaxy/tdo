@@ -67,7 +67,7 @@ export default ({ store, get, set, init }) => {
                 this.unsubscribeSettings && this.unsubscribeSettings();
 
                 boardTracker = new UserBoardTracker(userId, () => {
-                    let boards = boardTracker.index.filter(b => !b.deleted);
+                    let boards = boardTracker.getActiveBoards();
                     this.store.set("boards", boards);
 
                     set("boards", boards);
