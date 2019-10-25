@@ -32,7 +32,7 @@ export default {
             }, {
                 name: `You can customize task highlighting in Settings. #idea`,
             }, {
-                name: `Add some custom CSS and override background or text color of the whole application. #idea
+                name: `Add some custom CSS in **[Settings](tdo.cxjs.io/settings)** and override background or text color of the whole application. #idea
         
 Hint: \`body \{ color: lightblue \}\``
             }]
@@ -45,6 +45,10 @@ Hint: \`body \{ color: lightblue \}\``
                 name: 'Double click on a task to edit it',
             }, {
                 name: 'Hit Add Board (on the top) and enjoy **`tdo`**!',
+            }, {
+                name: 'Don\'t worry, your changes will be saved. Though it\'s best you **[sign in](https://tdo.cxjs.io/signIn)** to keep your data everywhere you go',
+            }, {
+                name: 'For aditional help visit the **[Help](https://tdo.cxjs.io/help)** page',
             }]
         }]
     }

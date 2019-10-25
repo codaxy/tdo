@@ -2,12 +2,14 @@
 
 A hackable TODO list suitable for handling many tasks, big or small.
 
-![Example](/assets/example.gif)
+![Example](/assets/example-sped_up_2x.gif)
 
 ![Default look](/assets/screenshot.png)
 ![Contrast look](/assets/tdo-contrast-card_view.png)
 ![Matrix look](/assets/tdo-hacker.png)
 ![light look](/assets/tdo-light-card_view.png)
+
+Tdo strives for minimalism and offers customizability to those who want it. Style it, optimize it, however it suits you. 
 
 Features:
 
@@ -23,7 +25,12 @@ Features:
 - touch support
 - offline mode
 
-[Open](https://tdo.cxjs.io)
+[Open](https://tdo.cxjs.io),
+
+[install](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows,
+
+Or get it for android by visiting it through Chrome and click 'add to your homescreen'.
+
 
 ## Install & Run
 
@@ -55,10 +62,12 @@ If you would like to contribute, which we would appreciate very much, you can!
 
 - How do I know which element is which in CSS?
     - Sorry, but for now you will have to use inspect page, it is a hackable to-do list afterall, isn't it?
+
 - Is there a way i can save my tasks?
-    - Yes! You can register in the upper part by clicking SignIn. It will also save your CSS.
+    - Yes! You can register in the upper part by clicking [SignIn](https://tdo.cxjs.io/signIn). It will also save your CSS code.
 
 
 
 
 **Built using [CxJS](https://cxjs.io)**
+
