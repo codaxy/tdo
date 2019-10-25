@@ -1,22 +1,27 @@
 # tdo
 
-A hackable TODO list suitable for handling many little tasks.
+A hackable TODO list suitable for handling many tasks, big or small.
+
+![Example](/assets/example.gif)
+
+![Default look](/assets/screenshot.png)
+![Contrast look](/assets/tdo-contrast-card_view.png)
+![Matrix look](/assets/tdo-hacker.png)
+![light look](/assets/tdo-light-card_view.png)
 
 Features:
 
 - task boards
 - Markdown support
-- keyboard based navigation
 - search
-- regex based task highlighting
-- automatic removal of completed items
 - custom CSS for boards and lists
+- regex based task highlighting
 - Google Firebase based authentication and storage
-- offline mode
 - drag & drop
+- keyboard based navigation
+- automatic removal of completed items
 - touch support
-
-![Screenshot](/assets/screenshot.png)
+- offline mode
 
 [Open](https://tdo.cxjs.io)
 
@@ -33,3 +38,27 @@ yarn start
 
 If you don't use yarn yet, npm will do too.
 
+## Usage
+
+On the homepage you will be presented with two card, *Blank page* and *Tutorial*. For the first time it's best you select the tutorial one which will open a preset tutorial board, explaining all the basic functions of Tdo! In the upper portion of the page, *Help ?* will provide you with instructions on additional functionality.
+
+
+## Contributing
+
+If you would like to contribute, which we would appreciate very much, you can!
+1. Just fork this repository
+2. Clone it to your local machine using https://github.com/codaxy/tdo.git
+3. Hack Away and create a new pull request!
+
+
+## FAQ
+
+- How do I know which element is which in CSS?
+    - Sorry, but for now you will have to use inspect page, it is a hackable to-do list afterall, isn't it?
+- Is there a way i can save my tasks?
+    - Yes! You can register in the upper part by clicking SignIn. It will also save your CSS.
+
+
+
+
+**Built using [CxJS](https://cxjs.io)**
