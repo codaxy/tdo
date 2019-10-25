@@ -4,7 +4,7 @@ A hackable TODO list suitable for handling many tasks, big or small.
 
 ![Example](/assets/example-sped_up_2x.gif)
 
-![Default look](/assets/screenshot.png)
+![Default look](/assets/original.jpg)
 ![Contrast look](/assets/tdo-contrast-card_view.png)
 ![Matrix look](/assets/tdo-hacker.png)
 ![light look](/assets/tdo-light-card_view.png)
