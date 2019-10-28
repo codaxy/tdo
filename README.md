@@ -2,12 +2,16 @@
 
 A hackable TODO list suitable for handling many tasks, big or small.
 
-![Example](/assets/example-sped_up_2x.gif)
+<img src="/assets/example-sped_up_2x.gif" title="Example" height="500" />
 
 ![Default look](/assets/original.jpg)
 ![Contrast look](/assets/tdo-contrast-card_view.png)
 ![Matrix look](/assets/tdo-hacker.png)
 ![light look](/assets/tdo-light-card_view.png)
+
+
+|![Default look](/assets/original.jpg)|![Contrast look](/assets/tdo-contrast-card_view.png)|![Matrix look](/assets/tdo-hacker.png)|![light look](/assets/tdo-light-card_view.png)|
+
 
 Tdo strives for minimalism and offers customizability to those who want it. Style it, optimize it, however it suits you. 
 
