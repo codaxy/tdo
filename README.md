@@ -10,8 +10,9 @@ A hackable TODO list suitable for handling many tasks, big or small.
 ![light look](/assets/tdo-light-card_view.png)
 
 
-|![Default look](/assets/original.jpg)|![Contrast look](/assets/tdo-contrast-card_view.png)|![Matrix look](/assets/tdo-hacker.png)|![light look](/assets/tdo-light-card_view.png)|
-
+|   |   |   |
+| --- | --- | --- |
+| <img src="/assets/original.jpg" title="Default look" width="350" /> | <img src="assets/tdo-contrast-card_view.png" title="Contrast look" width="350" /> | <img src="/assets/tdo-hacker.png" title="Matrix look" width="350" /> | <img src="/assets/tdo-light-card_view.png" title="Light look" width="350" /> |
 
 Tdo strives for minimalism and offers customizability to those who want it. Style it, optimize it, however it suits you. 
 
