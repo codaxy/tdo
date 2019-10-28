@@ -10,7 +10,7 @@ A hackable TODO list suitable for handling many tasks, big or small.
 ![light look](/assets/tdo-light-card_view.png)
 
 
-
+|     |     |     |
 | --- | --- | --- |
 | <img src="/assets/original-cropped.jpg" title="Default look" width="auto" /> | <img src="assets/tdo-contrast-card_view-cropped.png" title="Contrast look" width="auto" /> | <img src="/assets/tdo-hacker-cropped.png" title="Matrix look" width="auto" /> | <img src="/assets/tdo-light-card_view-cropped.png" title="Light look" width="auto" /> |
 
