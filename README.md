@@ -50,21 +50,21 @@ On the homepage you will be presented with two card, *Blank page* and *Tutorial*
 
 ## Contributing
 
-If you would like to contribute, which we would appreciate very much, you can!
-1. Just fork this repository
-2. Clone it to your local machine using https://github.com/codaxy/tdo.git
-3. Hack Away and create a new pull request!
+We appreciate involvment from the community.
+If you wish to contribute, feel free to fork this repository, and create a pull request with your modification!
 
 
 ## FAQ
 
 - How do I know which element is which in CSS?
-    - Sorry, but for now you will have to use inspect page, it is a hackable to-do list afterall, isn't it?
+    - For now you will have to use inspect page, we are planning on additional future implementations.
 
 - Is there a way i can save my tasks?
     - Yes! You can register in the upper part by clicking [SignIn](https://tdo.cxjs.io/signIn). It will also save your CSS code.
 
 
+
+---
 
 
 **Built using [CxJS](https://cxjs.io)**
