@@ -1,9 +1,9 @@
 # tdo
 
 
-A hackable To-do list suitable for handling a range of tasks.
-
-Tdo strives for minimalism and offers deep customizability via CSS and Markdown. 
+Tdo is a minimalist hackable to do list, suited for handling a wide range of tasks.
+Other task managment apps are good, but we wanted to declutter the interface and keep it productive
+For this reason it is built as simple as possible, yet allows deep customization via CSS and Markdown. 
 
 
 [Open](https://tdo.cxjs.io) tdo,
@@ -42,7 +42,7 @@ If you don't use yarn yet, npm will do too.
 - offline mode
 
 
-<p align="center"><img src="/assets/example-sped_up_2x.gif" title="Example" height="400" /></p>
+<p align="center"><img src="/assets/example-sped_up_2x.gif" title="Example" height="350" /></p>
 
 <img src="/assets/original-cropped.jpg" title="Default look" width="200" /> <img src="assets/tdo-contrast-card_view-cropped.png" title="Contrast look" width="200" /> <img src="/assets/tdo-hacker-cropped.png" title="Matrix look" width="200" /> <img src="/assets/tdo-light-card_view-cropped.png" title="Light look" width="200" />
 
@@ -50,7 +50,7 @@ If you don't use yarn yet, npm will do too.
 
 ## Usage
 
-On the homepage you will be presented with two card, *Blank page* and *Tutorial*. For the first time it's best you select the tutorial one which will open a preset tutorial board, explaining all the basic functions of Tdo! In the upper portion of the page, *Help ?* will provide you with instructions on additional functionality.
+On the homepage you will be presented with two cards, *Blank page* and *Tutorial*. For the first time it's best you select the tutorial one which will open a preset tutorial board, explaining all the basic functions of Tdo! In the upper portion of the page, *Help ?* will provide you with instructions on additional functionality.
 
 
 ## Contributing

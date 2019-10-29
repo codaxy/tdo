@@ -87,7 +87,7 @@ export default ({ store, ref, get, set }) => {
 
         Toast.create({
             mod: 'warning',
-            timeout: 3000,
+            timeout: 4000,
             items: (
                 <cx>
                     <div ws>
