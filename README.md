@@ -5,13 +5,13 @@ A hackable To-do list suitable for handling a range of tasks.
 
 Tdo strives for minimalism and offers deep customizability via CSS and Markdown. 
 
-[Open](https://tdo.cxjs.io),
+
+[Open](https://tdo.cxjs.io) tdo,
 
 [install](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows,
 
 Or get it for android by visiting it through Chrome and click 'add to your homescreen'.
 
-&nbsp;
 
 ## Install & Run
 
@@ -42,7 +42,7 @@ If you don't use yarn yet, npm will do too.
 - offline mode
 
 
-<img src="/assets/example-sped_up_2x.gif" title="Example" height="400" />
+<div style="text-align:center"><img src="/assets/example-sped_up_2x.gif" title="Example" height="400" /></div>
 
 <img src="/assets/original-cropped.jpg" title="Default look" width="200" /> <img src="assets/tdo-contrast-card_view-cropped.png" title="Contrast look" width="200" /> <img src="/assets/tdo-hacker-cropped.png" title="Matrix look" width="200" /> <img src="/assets/tdo-light-card_view-cropped.png" title="Light look" width="200" />
 
@@ -68,7 +68,9 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
     - Yes! You can register in the upper part by clicking [SignIn](https://tdo.cxjs.io/signIn). It will also save your CSS code.
 
 
-
+&nbsp;
+&nbsp;
+&nbsp;
 ---
 
 
