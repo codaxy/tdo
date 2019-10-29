@@ -42,7 +42,7 @@ If you don't use yarn yet, npm will do too.
 - offline mode
 
 
-<div style="text-align:center"><img src="/assets/example-sped_up_2x.gif" title="Example" height="400" /></div>
+<p align="center"><img src="/assets/example-sped_up_2x.gif" title="Example" height="400" /></p>
 
 <img src="/assets/original-cropped.jpg" title="Default look" width="200" /> <img src="assets/tdo-contrast-card_view-cropped.png" title="Contrast look" width="200" /> <img src="/assets/tdo-hacker-cropped.png" title="Matrix look" width="200" /> <img src="/assets/tdo-light-card_view-cropped.png" title="Light look" width="200" />
 
