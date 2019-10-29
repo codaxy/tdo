@@ -1,33 +1,16 @@
 # tdo
 
-A hackable TODO list suitable for handling many tasks, big or small.
-
-<img src="/assets/example-sped_up_2x.gif" title="Example" height="500" />
-
-
-<img src="/assets/original-cropped.jpg" title="Default look" width="200" /> <img src="assets/tdo-contrast-card_view-cropped.png" title="Contrast look" width="200" /> <img src="/assets/tdo-hacker-cropped.png" title="Matrix look" width="200" /> <img src="/assets/tdo-light-card_view-cropped.png" title="Light look" width="200" />
-
-Tdo strives for minimalism and offers customizability to those who want it. Style it, optimize it, however it suits you. 
-
-Features:
-
-- task boards
-- Markdown support
-- search
-- custom CSS for boards and lists
-- regex based task highlighting
-- Google Firebase based authentication and storage
-- drag & drop
-- keyboard based navigation
-- automatic removal of completed items
-- touch support
-- offline mode
-
 [Open](https://tdo.cxjs.io),
 
 [install](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows,
 
 Or get it for android by visiting it through Chrome and click 'add to your homescreen'.
+
+---
+
+A hackable To-do list suitable for handling a range of tasks.
+
+Tdo strives for minimalism and offers deep customizability via CSS and Markdown. 
 
 
 ## Install & Run
@@ -42,6 +25,28 @@ yarn start
 ```
 
 If you don't use yarn yet, npm will do too.
+
+
+## Features
+
+- task boards
+- Markdown support
+- search
+- custom CSS for boards and lists
+- regex based task highlighting
+- Google Firebase based authentication and storage
+- drag & drop
+- keyboard based navigation
+- automatic removal of completed items
+- touch support
+- offline mode
+
+
+<img src="/assets/example-sped_up_2x.gif" title="Example" height="400" />
+
+<img src="/assets/original-cropped.jpg" title="Default look" width="200" /> <img src="assets/tdo-contrast-card_view-cropped.png" title="Contrast look" width="200" /> <img src="/assets/tdo-hacker-cropped.png" title="Matrix look" width="200" /> <img src="/assets/tdo-light-card_view-cropped.png" title="Light look" width="200" />
+
+
 
 ## Usage
 
