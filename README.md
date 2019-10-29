@@ -1,17 +1,17 @@
 # tdo
 
+
+A hackable To-do list suitable for handling a range of tasks.
+
+Tdo strives for minimalism and offers deep customizability via CSS and Markdown. 
+
 [Open](https://tdo.cxjs.io),
 
 [install](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows,
 
 Or get it for android by visiting it through Chrome and click 'add to your homescreen'.
 
----
-
-A hackable To-do list suitable for handling a range of tasks.
-
-Tdo strives for minimalism and offers deep customizability via CSS and Markdown. 
-
+&nbsp;
 
 ## Install & Run
 
