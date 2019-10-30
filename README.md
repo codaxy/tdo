@@ -6,7 +6,7 @@ We wanted to declutter the interface and keep it productive,
 and for this reason we built it as simple as possible, yet still allowing deep customization via CSS and Markdown. 
 
 
-[Open](https://tdo.cxjs.io) tdo in browser <a href="https://tdo.cxjs.io"><img src="/assets/tdo512.png" title="Example" height="30" /></a>
+[Open](https://tdo.cxjs.io) tdo in browser <a href="https://tdo.cxjs.io"><img src="/assets/tdo512.png" title="Example" height="20" /></a>
 
 [download](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows <a href="https://github.com/codaxy/tdo/releases/tag/1.0.0"><img src="/assets/preuzmi.png" title="Example" height="30" /></a>
 
