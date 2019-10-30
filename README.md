@@ -2,16 +2,15 @@
 
 
 Tdo is a minimalist hackable to do list, suited for handling a wide range of tasks.
-Other task managment apps are good, but we wanted to declutter the interface and keep it productive
+We wanted to declutter the interface and keep it productive, 
+and for this reason we built it as simple as possible, yet still allowing deep customization via CSS and Markdown. 
 
-For this reason it is built as simple as possible, yet allows deep customization via CSS and Markdown. 
 
+[Open](https://tdo.cxjs.io) tdo in browser (https://tdo.cxjs.io),
 
-[Open](https://tdo.cxjs.io) tdo,
+[download](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows,
 
-[install](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows,
-
-Or get it for android by visiting it through Chrome and click 'add to your homescreen'.
+Or get it for android by visiting it through Chrome and press 'add to your homescreen'.
 
 
 ## Install & Run
@@ -65,7 +64,7 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
 ## FAQ
 
 - How do I know which element is which in CSS?
-    - For now you will have to use inspect page, we are planning on additional future implementations.
+    - For now you will have to use inspect page, but vwe are planning on additional future implementations.
 
 - Is there a way i can save my tasks?
     - Yes! You can register in the upper part by clicking [SignIn](https://tdo.cxjs.io/signIn). It will also save your CSS code.
