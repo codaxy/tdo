@@ -1,19 +1,19 @@
 # tdo
 
 
-Tdo is a minimalist hackable to do list, suited for handling a wide range of tasks.
-We wanted to declutter the interface and keep it productive, 
-and for this reason we built it as simple as possible, yet still allowing deep customization via CSS and Markdown. 
+Tdo is a minimalist hackable to do list suited for handling a wide range of tasks.
+We wanted the UI to be as simple as possible, yet allowing deep customization via CSS and Markdown.
 
+[Open tdo in browser](https://tdo.cxjs.io)
 
-[Open](https://tdo.cxjs.io) tdo in browser (https://tdo.cxjs.io),
+[Download Windows app](https://github.com/codaxy/tdo/releases)
 
-[download](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows (https://github.com/codaxy/tdo/releases/tag/1.0.0),
-
-Or get it for android by visiting it through Chrome and press 'add to your homescreen'.
+Get it for Android by using 'Add to your homescreen' option in Chrome.
 
 
 ## Install & Run
+
+To develop tdo on your computer you'll need [Node.js](https://nodejs.org).
 
 Install:
 ```
@@ -58,7 +58,7 @@ In the upper portion of the page, *Help ?* will provide you with instructions on
 ## Contributing
 
 We appreciate involvment from the community.
-If you wish to contribute, feel free to fork this repository, and create a pull request with your modification.
+If you wish to contribute, feel free to fork this repository, and create a pull request with your modifications.
 
 
 ## FAQ
