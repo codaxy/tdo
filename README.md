@@ -13,17 +13,20 @@ Get it for Android by using 'Add to your homescreen' option in Chrome.
 
 ## Install & Run
 
-To develop tdo on your computer you'll need [Node.js](https://nodejs.org).
+To develop tdo on your computer you'll need [Node.js](https://nodejs.org) installed on your computer.
 
-Install:
+Install npm packages:
 ```
-yarn
+yarn install
 ```    
 Run:
 ```
 yarn start    
 ```
-
+Build:
+```
+yarn build    
+```
 If you don't use yarn yet, npm will do too.
 
 
