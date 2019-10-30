@@ -9,6 +9,8 @@ export default <cx>
 
             Use double-click to edit lists and tasks.
 
+            Your data will be saved in your browser, but you can also [sign in](https://tdo.cxjs.io/signIn) to access your data on other devices
+
             ### Keyboard Shortcuts (Windows)
 
             `Up` or `k` Move cursor to the previous task
