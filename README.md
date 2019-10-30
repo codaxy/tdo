@@ -4,7 +4,7 @@
 Tdo is a minimalist hackable to do list suited for handling a wide range of tasks.
 We wanted the UI to be as simple as possible, yet allowing deep customization via CSS and Markdown.
 
-[Open tdo in browser](https://tdo.cxjs.io)
+[Open tdo in browser](https://tdoapp.com)
 
 [Download Windows app](https://github.com/codaxy/tdo/releases)
 
@@ -70,7 +70,7 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
     - For now you will have to use inspect page, but vwe are planning on additional future implementations.
 
 - Is there a way i can save my tasks?
-    - Yes! You can register in the upper part by clicking [SignIn](https://tdo.cxjs.io/signIn). It will also save your CSS code.
+    - Yes! You can register in the upper part by clicking [SignIn](https://tdoapp.com/signIn). It will also save your CSS code.
 
 
 &nbsp;
