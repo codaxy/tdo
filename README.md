@@ -1,6 +1,7 @@
 # tdo
 
 
+<<<<<<< HEAD
 Tdo is a minimalist hackable to do list, suited for handling a wide range of tasks.
 We wanted to declutter the interface and keep it productive, 
 and for this reason we built it as simple as possible, yet still allowing deep customization via CSS and Markdown. 
@@ -11,19 +12,34 @@ and for this reason we built it as simple as possible, yet still allowing deep c
 [download](https://github.com/codaxy/tdo/releases/tag/1.0.0) it for Windows (https://github.com/codaxy/tdo/releases/tag/1.0.0),
 
 Or get it for android by visiting it through Chrome and press 'add to your homescreen'.
+=======
+Tdo is a minimalist hackable to do list suited for handling a wide range of tasks.
+We wanted the UI to be as simple as possible, yet allowing deep customization via CSS and Markdown.
+
+[Open tdo in browser](https://tdoapp.com)
+
+[Download Windows app](https://github.com/codaxy/tdo/releases)
+
+Get it for Android by using 'Add to your homescreen' option in Chrome.
+>>>>>>> 17d923cad468ea10384b8ed9a9b9a7a4e2882374
 
 
 ## Install & Run
 
-Install:
+To develop tdo on your computer you'll need [Node.js](https://nodejs.org) installed on your computer.
+
+Install npm packages:
 ```
-yarn
+yarn install
 ```    
 Run:
 ```
 yarn start    
 ```
-
+Build:
+```
+yarn build    
+```
 If you don't use yarn yet, npm will do too.
 
 
@@ -58,7 +74,11 @@ In the upper portion of the page, *Help ?* will provide you with instructions on
 ## Contributing
 
 We appreciate involvment from the community.
+<<<<<<< HEAD
 If you wish to contribute, feel free to fork this repository, and create a pull request with your modification.
+=======
+If you wish to contribute, feel free to fork this repository, and create a pull request with your modifications.
+>>>>>>> 17d923cad468ea10384b8ed9a9b9a7a4e2882374
 
 
 ## FAQ
@@ -67,7 +87,11 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
     - For now you will have to use inspect page, but vwe are planning on additional future implementations.
 
 - Is there a way i can save my tasks?
+<<<<<<< HEAD
     - Yes! You can register in the upper part by clicking [SignIn](https://tdo.cxjs.io/signIn). It will also save your CSS code.
+=======
+    - Yes! You can register in the upper part by clicking [SignIn](https://tdoapp.com/signIn). It will also save your CSS code.
+>>>>>>> 17d923cad468ea10384b8ed9a9b9a7a4e2882374
 
 
 &nbsp;
