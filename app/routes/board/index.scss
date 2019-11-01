@@ -62,8 +62,8 @@
     visibility: visible;
   }
 }
-  
-.cxb-draghandle {
+
+.drag-icon {
   position: absolute;
 }
 
@@ -73,6 +73,12 @@
   width: 100%;
   display: inline-block;
 
+  .cxb-draghandle {
+    position: absolute;
+  }
+  .drag-icon {
+    position: absolute;
+  }
 
   &:focus {
     outline: none;
