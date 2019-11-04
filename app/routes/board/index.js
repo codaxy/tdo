@@ -106,7 +106,7 @@ export default <cx>
                                 <MenuItem class="menu-item">
                                     <DragSource data={{ type: "item" }} hideOnDrag handled>
                                         <DragHandle
-                                            style="position:fixed; display: inline; margin:3px; cursor: move; font-size:15px">
+                                            style="position:absolute; display: inline; margin:3px; cursor: move; font-size:15px">
                                             <div class="drag-icon">&#x2807;</div>
                                         </DragHandle>
                                         <Task
