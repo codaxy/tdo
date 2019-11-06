@@ -29,8 +29,17 @@ export default <cx>
 
         <h3>Task Styles</h3>
 
-        <Repeater records:bind="settings.taskStyles">
+        <Repeater records:bind="settings.taskStyles" visible if={window.innerWidth>=1200}>
             <PureContainer layout={LabelsTopLayout}>
+                <span text:tpl="{[{$index}+1]}." />
+                <TextField value:bind="$record.regex" label="Regex" />
+                <TextField value:bind="$record.style" label="Style" />
+                <TextField value:bind="$record.className" label="Class" />
+                <a href="#" onClick="removeTaskStyle">Remove</a>
+            </PureContainer>
+        </Repeater>
+        <Repeater records:bind="settings.taskStyles" visible if={window.innerWidth<=1200}>
+            <PureContainer layout={LabelsLeftLayout}>
                 <span text:tpl="{[{$index}+1]}." />
                 <TextField value:bind="$record.regex" label="Regex" />
                 <TextField value:bind="$record.style" label="Style" />
