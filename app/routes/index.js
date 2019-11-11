@@ -80,10 +80,11 @@ const MenuItems = <cx>
 export default <cx>
     <div
         class="cxb-layout"
+        style="display: flex; flex-direction: column; height: 100%; width: 100%"
         controller={Controller}
         onKeyDown={executeKeyboardShortcuts}
     >
-        <style innerHtml-bind="settings.css" />
+        <style innerHtml-bind="settings.css"/>
         <Sandbox key-bind="url" storage-bind="pages">
             <header class="cxe-layout-header">
                 <h1>tdo</h1>
@@ -111,7 +112,11 @@ export default <cx>
                     </MenuItem>
                 </Menu>
             </header>
-            <main class="cxe-layout-main" layout={FirstVisibleChildLayout}>
+            <main 
+            class="cxe-layout-main" 
+            style="height: 100%; overflow: auto; width: 100%" 
+            layout={FirstVisibleChildLayout}
+            >
                 <Route url-bind="url" route="~/settings">
                     <Settings />
                 </Route>
