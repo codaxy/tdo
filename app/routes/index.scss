@@ -1,6 +1,14 @@
+.cxb-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%
+}
+
 .cxe-layout-header {
   display: flex;
   padding: 1rem;
+  flex-shrink: 0;
 
   .spacer {
     width: 6rem;
@@ -14,6 +22,12 @@
   a {
     padding: 0.5rem 1rem;
   }
+}
+
+.cxe-layout-main {
+  flex: 1 1 0%;
+  overflow: auto;
+  width: 100%;
 }
 
 .cxb-textfield.cxm-search {
