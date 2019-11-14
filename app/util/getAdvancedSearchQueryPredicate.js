@@ -3,7 +3,7 @@ import {getSearchQueryPredicate} from "cx/util";
 export function getAdvancedSearchQueryPredicate(query) {
     if (!query) return () => true;
 
-    let parts = query.split(/(\(|\)|\bAND\b|\bNOT\b|\bOR\b| +)/);
+    let parts = query.split(/(\(|\)| +)/);
 
     let checks = {};
 
