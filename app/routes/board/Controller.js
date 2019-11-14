@@ -1,11 +1,12 @@
 import { FocusManager, batchUpdatesAndNotify, batchUpdates } from "cx/ui";
 import { ArrayRef } from "cx/data";
-import { KeyCode, closest, getSearchQueryPredicate } from "cx/util";
+import { KeyCode, closest } from "cx/util";
 import { Toast, Button, Text } from "cx/widgets";
 
 import uid from "uid";
 import { BoardTasksTracker } from "../../data/BoardTasksTracker";
 import { BoardListsTracker } from "../../data/BoardListsTracker";
+import {getAdvancedSearchQueryPredicate} from "../../util/getAdvancedSearchQueryPredicate";
 
 const OneDayMs = 24 * 60 * 60 * 1000;
 
@@ -19,7 +20,7 @@ export default ({ store, ref, get, set }) => {
 
     const refreshTasks = () => {
         let search = get("search");
-        let searchPredicate = search && search.query ? getSearchQueryPredicate( search.query) : null;
+        let searchPredicate = search && search.query ? getAdvancedSearchQueryPredicate( search.query) : null;
 
         tasks.set(taskTracker.index.filter(t => {
             if (t.deleted)
