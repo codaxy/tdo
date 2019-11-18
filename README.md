@@ -81,5 +81,5 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
 &nbsp;
 &nbsp;
 
-<p align="center"> **Built using [CxJS](https://cxjs.io)** </p>
+<p align="center"><b>**Built using <a href="https://cxjs.io">CxJS</a>**</b></p>
 
