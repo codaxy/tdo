@@ -34,6 +34,8 @@ export default ({ store, get, set, init }) => {
                 this.store.set("layout.mode", this.getLayoutMode());
             });
 
+            this.store.set('page.showToolTips', true);
+
             auth.onAuthStateChanged(user => {
 
                 if (!user) {

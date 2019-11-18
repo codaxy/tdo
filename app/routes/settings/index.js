@@ -26,6 +26,9 @@ export default <cx>
                 help="day(s)"
             />
         </div>
+        <div>
+            <Checkbox checked:bind='page.showToolTips' text="Enable tooltips" />
+        </div>
 
         <h3>Task Styles</h3>
         <div style="overflow: auto">

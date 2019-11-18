@@ -96,6 +96,12 @@ export default <cx>
                     autoFocus
                     inputAttrs={{ autoComplete: "off" }}
                     showClear
+                    tooltip={{
+                        visible: {bind: "page.showToolTips"},
+                        placement: "down",
+                        mouseTrap: true,
+                        text: "Filter displayed tasks with keywords and boolean search using the &&/|| or AND/OR operators. e.g: item 1 AND/OR item 2",
+                    }}                    
                 />
 
                 <Menu horizontal>
