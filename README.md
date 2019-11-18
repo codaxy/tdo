@@ -71,7 +71,7 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
     - For now you will have to use inspect page, but vwe are planning on additional future implementations.
 
 - Is there a way i can save my tasks?
-    - Yes! You can register in the upper part by clicking [SignIn](https://tdoapp.com/signIn). It will also save your CSS code.
+    - Yes! You can register in the upper part by clicking [Sign in](https://tdoapp.com/signIn). It will also save your CSS code.
 
 
 &nbsp;
