@@ -119,8 +119,7 @@ export default <cx>
                 </Menu>
             </header>
             <main 
-            class="cxe-layout-main" 
-            style="height: 100%; overflow: auto; width: 100%" 
+            class="cxe-layout-main"
             layout={FirstVisibleChildLayout}
             >
                 <Route url-bind="url" route="~/settings">
