@@ -37,6 +37,7 @@ If you don't use yarn yet, npm will do too.
 - search
 - custom CSS for boards and lists
 - regex based task highlighting
+- boolean search
 - Google Firebase based authentication and storage
 - drag & drop
 - keyboard based navigation
@@ -70,7 +71,7 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
     - For now you will have to use inspect page, but vwe are planning on additional future implementations.
 
 - Is there a way i can save my tasks?
-    - Yes! You can register in the upper part by clicking [SignIn](https://tdoapp.com/signIn). It will also save your CSS code.
+    - Yes! You can register in the upper part by clicking [Sign in](https://tdoapp.com/signIn). It will also save your CSS code.
 
 
 &nbsp;
@@ -80,5 +81,5 @@ If you wish to contribute, feel free to fork this repository, and create a pull 
 &nbsp;
 &nbsp;
 
-**Built using [CxJS](https://cxjs.io)**
+<p align="center"><b>**Built using <a href="https://cxjs.io">CxJS</a>**</b></p>
 
