@@ -25,6 +25,11 @@ export default <cx>
                 label="Header Class"
                 placeholder="CSS class"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Assign a custom CSS class that you've defined in settings. The changes will apply only to the boards's header",
+                }}
             />
         </div>
 
@@ -35,6 +40,11 @@ export default <cx>
                 placeholder="color, font-size, ..."
                 reactOn="input"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Write your own custom CSS settings to apply on the board's header",
+                }}
             />
         </div>
 
@@ -44,6 +54,11 @@ export default <cx>
                 label="Board Class"
                 placeholder="CSS class"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Assign a custom CSS class that you've defined in settings. The changes will apply to the whole board",
+                }}
             />
         </div>
 
@@ -54,6 +69,11 @@ export default <cx>
                 placeholder="background, color, ..."
                 reactOn="input"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Write your own custom CSS settings to apply on the whole board",
+                }}
             />
         </div>
 

@@ -1,6 +1,8 @@
-import {HtmlElement, TextField, TextArea, LookupField, Button} from 'cx/widgets';
+import {HtmlElement, TextField, TextArea, LookupField, Button, enableTooltips} from 'cx/widgets';
 import {LabelsTopLayout} from 'cx/ui';
-
+import upperCase from 'upper-case';
+import { expression } from 'cx/data';
+enableTooltips();
 
 export default <cx>
     <div class="cxb-listeditor">
@@ -26,6 +28,11 @@ export default <cx>
                 label="Header Class"
                 placeholder="CSS class"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Assign a custom CSS class that you've defined in settings. The changes will apply only to the list's header",
+                }}
             />
         </div>
 
@@ -36,6 +43,11 @@ export default <cx>
                 placeholder="color"
                 reactOn="input"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Write your own custom CSS settings to apply on the list's header",
+                }}
             />
         </div>
 
@@ -45,6 +57,11 @@ export default <cx>
                 label="List Class"
                 placeholder="CSS class"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Assign a custom CSS class that you've defined in settings. The changes will apply to the whole list",
+                }}
             />
         </div>
 
@@ -55,14 +72,32 @@ export default <cx>
                 placeholder="width, background"
                 reactOn="input"
                 style="width:100%;"
+                tooltip={{
+                    visible: {bind: "settings.showTooltips"},
+                    placement: "right",
+                    text: "Write your own custom CSS settings to apply on the whole list",
+                }}
             />
         </div>
 
         <br/>
 
         <div>
-            <Button onClick="onSaveList">Save</Button>
-            <Button mod="danger" confirm="Are you sure?" onClick="onDeleteList" style="float:right">Delete</Button>
+            <Button 
+            onClick="onSaveList">Save</Button>
+            <Button 
+            mod="danger" 
+            confirm="Are you sure?" 
+            onClick="onDeleteList" 
+            style="float:right" 
+            tooltip={{
+                visible: {bind: "settings.showTooltips"},
+                placement: "down",
+                text: "Delete the entire list",
+                }}
+            >
+            Delete
+            </Button>
         </div>
         <br/>
     </div>

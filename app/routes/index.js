@@ -80,6 +80,7 @@ const MenuItems = <cx>
 export default <cx>
     <div
         class="cxb-layout"
+        style="display: flex; flex-direction: column; height: 100%; width: 100%"
         controller={Controller}
         onKeyDown={executeKeyboardShortcuts}
     >
@@ -95,6 +96,11 @@ export default <cx>
                     autoFocus
                     inputAttrs={{ autoComplete: "off" }}
                     showClear
+                    tooltip={{
+                        visible: {bind: "settings.showTooltips"},
+                        placement: "down",
+                        text: "Filter displayed tasks with keywords and boolean search using the &&/|| or AND/OR operators. e.g: item 1 AND/OR item 2",
+                    }}                    
                 />
 
                 <Menu horizontal>

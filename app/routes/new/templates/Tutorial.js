@@ -49,6 +49,8 @@ Hint: \`body \{ color: lightblue \}\``
                 name: 'Don\'t worry, your changes will be saved. Though it\'s best you **[sign in](https://tdo.cxjs.io/signIn)** to keep your data everywhere you go',
             }, {
                 name: 'For aditional help visit the **[Help](https://tdo.cxjs.io/help)** page',
+            }, {
+                name: 'You can turn the tooltips off in the settings',
             }]
         }]
     }
