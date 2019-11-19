@@ -29,9 +29,8 @@ export default <cx>
                 placeholder="CSS class"
                 style="width:100%;"
                 tooltip={{
-                    visible: {bind: "page.showToolTips"},
+                    visible: {bind: "settings.showTooltips"},
                     placement: "right",
-                    mouseTrap: true,
                     text: "Assign a custom CSS class that you've defined in settings. The changes will apply only to the list's header",
                 }}
             />
@@ -45,9 +44,8 @@ export default <cx>
                 reactOn="input"
                 style="width:100%;"
                 tooltip={{
-                    visible: {bind: "page.showToolTips"},
+                    visible: {bind: "settings.showTooltips"},
                     placement: "right",
-                    mouseTrap: true,
                     text: "Write your own custom CSS settings to apply on the list's header",
                 }}
             />
@@ -60,9 +58,8 @@ export default <cx>
                 placeholder="CSS class"
                 style="width:100%;"
                 tooltip={{
-                    visible: {bind: "page.showToolTips"},
+                    visible: {bind: "settings.showTooltips"},
                     placement: "right",
-                    mouseTrap: true,
                     text: "Assign a custom CSS class that you've defined in settings. The changes will apply to the whole list",
                 }}
             />
@@ -76,9 +73,8 @@ export default <cx>
                 reactOn="input"
                 style="width:100%;"
                 tooltip={{
-                    visible: {bind: "page.showToolTips"},
+                    visible: {bind: "settings.showTooltips"},
                     placement: "right",
-                    mouseTrap: true,
                     text: "Write your own custom CSS settings to apply on the whole list",
                 }}
             />
@@ -95,9 +91,8 @@ export default <cx>
             onClick="onDeleteList" 
             style="float:right" 
             tooltip={{
-                visible: {bind: "page.showToolTips"},
+                visible: {bind: "settings.showTooltips"},
                 placement: "down",
-                mouseTrap: true,
                 text: "Delete the entire list",
                 }}
             >

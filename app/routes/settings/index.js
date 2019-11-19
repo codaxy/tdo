@@ -27,7 +27,7 @@ export default <cx>
             />
         </div>
         <div>
-            <Checkbox checked:bind='page.showToolTips' text="Enable tooltips" />
+            <Checkbox checked:bind='settings.showTooltips' text="Enable tooltips" />
         </div>
 
         <h3>Task Styles</h3>
