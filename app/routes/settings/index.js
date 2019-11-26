@@ -49,7 +49,8 @@ export default <cx>
         <h3>Custom CSS</h3>
 
         <p>
-            <a href onClick="darkTheme">Light theme</a>
+            <a href onClick="defaultTheme" style="padding: 10px">Default theme</a>
+            <a href onClick="darkTheme" style="padding: 10px">Light theme</a>
         </p>
         <TextArea value:bind="settings.css" rows={20} style="width: 600px; width:100%" />
     </div>
