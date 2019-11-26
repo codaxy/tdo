@@ -436,6 +436,9 @@ export default ({ store, ref, get, set }) => {
             listTracker.update(store.get("$list.id"), {
                 edit: true
             });
+        },
+        showList(e, {store}) {
+            store.toggle("$showlist")
         }
     };
 }

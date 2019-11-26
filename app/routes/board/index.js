@@ -81,7 +81,16 @@ export default <cx>
                             >
                                 &#x270e;
                             </a>
+                            <a
+                                href="#"
+                                style="padding-left: 10px;"
+                                tabIndex={-1}
+                                onClick="showList"
+                            >
+                                &#x2921;
+                            </a>
                         </DragHandle>
+                    <div class="cxb-listeditor" visible-expr="{$showlist}">
                         <ListEditor visible-expr="!!{$list.edit}"/>
                         <Menu class="cxe-tasklist-items" onKeyDown="onTaskListKeyDown" itemPadding="small">
                             <DropZone
@@ -134,6 +143,7 @@ export default <cx>
                             </Repeater>
                             <a class="cxe-tasklist-add" onClick="onAddTask" href="#">Add Task</a>
                         </Menu>
+                        </div>
                     </DragSource>
 
                     <DropZone
