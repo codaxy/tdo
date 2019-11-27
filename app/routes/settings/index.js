@@ -50,7 +50,7 @@ export default <cx>
 
         <p>
             <a href onClick="matrixTheme">Matrix theme</a>
-            <a href onClick="darkTheme" style="padding: 15px">Slightly darker theme</a>
+            <a href onClick="darkTheme" style="padding: 15px">Dark theme</a>
             <a href onClick="paperboyTheme" style="padding: 15px">Paperboy theme</a>
             <a href onClick="defaultTheme" style="padding: 15px">Default theme</a>
             <a href onClick="capuccinoTheme" style="padding: 15px">Capuccino theme</a>
