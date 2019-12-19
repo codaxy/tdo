@@ -451,17 +451,5 @@ export default ({ store, ref, get, set }) => {
                 });
             }
         },
-        showAllList(e, {store}) {
-
-            // let lists = store.get('$page.lists');
-            // lists.map(list => {
-            //     listTracker.update(list.id, { show: false })
-            // });
-
-            // store.update('$page.lists', updateArray, list => ({
-            //     ...list,
-            //     show: true
-            // }));
-        }
     };
 }

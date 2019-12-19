@@ -86,21 +86,12 @@ export default <cx>
                                 style="padding-left: 10px;"
                                 tabIndex={-1}
                                 onClick="showList"
-                                visible-expr="{layout.mode}=='phone'"
+                                visible-expr="{layout.mode}=='phone' || 'tablet'"
                             >
                                 &#x2921;
                             </a>
-                            <a
-                                href="#"
-                                style="padding-left: 10px;"
-                                tabIndex={-1}
-                                onClick="showAllList"
-                            >
-                                &#x2933;
-                            </a>
         
                         </DragHandle>
-                        {/* visible-expr="!!{$list.show}" */}
                     <div class="cxb-listeditor" visible-expr="{layout.mode} =='desktop' || {$list.show}">
                         <ListEditor visible-expr="!!{$list.edit}"/>
                         <Menu class="cxe-tasklist-items" onKeyDown="onTaskListKeyDown" itemPadding="small">
