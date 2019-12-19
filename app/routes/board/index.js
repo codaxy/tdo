@@ -86,7 +86,7 @@ export default <cx>
                                 style="padding-left: 10px;"
                                 tabIndex={-1}
                                 onClick="showList"
-                                visible-expr="{layout.mode}=='phone' || 'tablet'"
+                                visible-expr="{layout.mode}=='phone' || {layout.mode}=='tablet'"
                             >
                                 &#x2921;
                             </a>
