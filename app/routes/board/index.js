@@ -92,7 +92,7 @@ export default <cx>
                             </a>
         
                         </DragHandle>
-                    <div class="cxb-listeditor" visible-expr="{layout.mode} =='desktop' || {$list.show}">
+                    <div class="cxb-listeditor" visible-expr="{layout.mode} =='desktop' || {$list.collapsed}">
                         <ListEditor visible-expr="!!{$list.edit}"/>
                         <Menu class="cxe-tasklist-items" onKeyDown="onTaskListKeyDown" itemPadding="small">
                             <DropZone

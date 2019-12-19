@@ -1,12 +1,12 @@
 import { FocusManager, batchUpdatesAndNotify, batchUpdates } from "cx/ui";
-import { ArrayRef, updateArray } from "cx/data";
+import { ArrayRef, } from "cx/data";
 import { KeyCode, closest } from "cx/util";
 import { Toast, Button, Text } from "cx/widgets";
 
 import uid from "uid";
 import { BoardTasksTracker } from "../../data/BoardTasksTracker";
 import { BoardListsTracker } from "../../data/BoardListsTracker";
-import {getAdvancedSearchQueryPredicate} from "../../util/getAdvancedSearchQueryPredicate";
+import { getAdvancedSearchQueryPredicate } from "../../util/getAdvancedSearchQueryPredicate";
 
 const OneDayMs = 24 * 60 * 60 * 1000;
 
@@ -20,7 +20,7 @@ export default ({ store, ref, get, set }) => {
 
     const refreshTasks = () => {
         let search = get("search");
-        let searchPredicate = search && search.query ? getAdvancedSearchQueryPredicate( search.query) : null;
+        let searchPredicate = search && search.query ? getAdvancedSearchQueryPredicate(search.query) : null;
 
         tasks.set(taskTracker.index.filter(t => {
             if (t.deleted)
@@ -154,14 +154,14 @@ export default ({ store, ref, get, set }) => {
             let id = uid();
             listTracker.update(
                 id, {
-                    id: id,
-                    name: "New List",
-                    edit: true,
-                    createdDate: new Date().toISOString(),
-                    boardId: boardId,
-                    order: getListsSorted().length,
-                    show: true
-                });
+                id: id,
+                name: "New List",
+                edit: true,
+                createdDate: new Date().toISOString(),
+                boardId: boardId,
+                order: getListsSorted().length,
+                collapsed: true
+            });
         },
 
         onSaveList(e, { store }) {
@@ -441,13 +441,13 @@ export default ({ store, ref, get, set }) => {
 
 
         showList(e, { store }) {
-            if(store.get("$list.show")){
-            listTracker.update(store.get("$list.id"), {
-                    show: false
-                });
-            }else{
+            if (store.get("$list.collapsed")) {
                 listTracker.update(store.get("$list.id"), {
-                    show: true
+                    collapsed: false
+                });
+            } else {
+                listTracker.update(store.get("$list.id"), {
+                    collapsed: true
                 });
             }
         },
