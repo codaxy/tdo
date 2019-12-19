@@ -1,5 +1,5 @@
 import { FocusManager, batchUpdatesAndNotify, batchUpdates } from "cx/ui";
-import { ArrayRef } from "cx/data";
+import { ArrayRef, updateArray } from "cx/data";
 import { KeyCode, closest } from "cx/util";
 import { Toast, Button, Text } from "cx/widgets";
 
@@ -159,7 +159,8 @@ export default ({ store, ref, get, set }) => {
                     edit: true,
                     createdDate: new Date().toISOString(),
                     boardId: boardId,
-                    order: getListsSorted().length
+                    order: getListsSorted().length,
+                    show: true
                 });
         },
 
@@ -437,8 +438,30 @@ export default ({ store, ref, get, set }) => {
                 edit: true
             });
         },
-        showList(e, {store}) {
-            store.toggle("$showlist")
+
+
+        showList(e, { store }) {
+            if(store.get("$list.show")){
+            listTracker.update(store.get("$list.id"), {
+                    show: false
+                });
+            }else{
+                listTracker.update(store.get("$list.id"), {
+                    show: true
+                });
+            }
+        },
+        showAllList(e, {store}) {
+
+            // let lists = store.get('$page.lists');
+            // lists.map(list => {
+            //     listTracker.update(list.id, { show: false })
+            // });
+
+            // store.update('$page.lists', updateArray, list => ({
+            //     ...list,
+            //     show: true
+            // }));
         }
     };
 }
