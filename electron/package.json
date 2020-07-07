@@ -11,7 +11,7 @@
   "author": "Nebojsa Peric",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.2",
+    "electron": "^7.2.4",
     "electron-builder": "^21.2.0"
   },
   "build": {
