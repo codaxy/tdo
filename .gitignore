@@ -9,3 +9,4 @@ node_modules
 *.db
 *.pem
 packages
+.DS_Store
