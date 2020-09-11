@@ -166,10 +166,10 @@ export default ({ store, get, set, init }) => {
 
             showUndoToast(
                 `Board ${board.name} has been deleted`,
-                () => this.onUndoDeleteBoard(board.id));
+                () => this.undoDeleteBoard(board.id));
         },
 
-        onUndoDeleteBoard(id) {
+        undoDeleteBoard(id) {
             boardTracker.update(id, {
                 deleted: false,
                 deletedDate: null
