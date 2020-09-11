@@ -176,11 +176,11 @@ export default ({ store, ref, get, set }) => {
             listTracker.forceUpdate();
 
             showUndoToast(`List ${list.name} has been deleted`,
-                () => this.onUndoDeleteList(id)
+                () => this.undoDeleteList(id)
             );
         },
 
-        onUndoDeleteList(id) {
+        undoDeleteList(id) {
             listTracker.update(id, {
                 deleted: false,
                 deletedDate: null
