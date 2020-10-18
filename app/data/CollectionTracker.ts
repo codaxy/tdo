@@ -3,7 +3,6 @@ import { HasId } from "./HasId";
 import { firestore } from "firebase";
 
 export class CollectionTracker<T extends HasId> {
-
     collection: firestore.CollectionReference;
     onUpdate: () => void;
     unsubscribe: () => void;
@@ -18,19 +17,19 @@ export class CollectionTracker<T extends HasId> {
     start() {
         this.stop();
         let loaded = false;
-        this.unsubscribe = this.collection
-            .onSnapshot(snapshot => {
-                let dirty = false;
-                snapshot.docChanges().forEach(({doc}) => {
-                    let data: any = doc.data();
-                    if (this.index.index({ ...data })) {
-                        dirty = true;
-                    }
-                });
-                if (dirty || !loaded)
-                    this.onUpdate();
-                loaded = true;
+        this.unsubscribe = this.collection.onSnapshot(snapshot => {
+            let dirty = false;
+            snapshot.docChanges().forEach(({ doc, type }) => {
+                let data: any = doc.data();
+                if (type != "removed") {
+                    if (this.index.index({ ...data })) dirty = true;
+                } else {
+                    if (this.index.remove(data.id)) dirty = true;
+                }
             });
+            if (dirty || !loaded) this.onUpdate();
+            loaded = true;
+        });
     }
 
     stop() {
@@ -38,14 +37,18 @@ export class CollectionTracker<T extends HasId> {
         this.unsubscribe = null;
     }
 
-    update(id: string, data: Partial<T>, options: { suppressUpdate?: boolean, suppressSync? } = {}) {
-        let t = Object.assign({ id }, this.index.get(id), data);
+    update(
+        id: string,
+        data: Partial<T>,
+        options: { suppressUpdate?: boolean; suppressSync? } = {}
+    ) {
+        let t = Object.assign({ id }, this.index.get(id), data, {
+            lastSyncTime: Date.now()
+        });
 
-        if (!this.index.index(t))
-            return false;
+        if (!this.index.index(t)) return false;
 
-        if (!options.suppressUpdate)
-            this.onUpdate();
+        if (!options.suppressUpdate) this.onUpdate();
 
         if (!options.suppressSync) {
             this.collection.doc(id).set(t);
@@ -58,7 +61,7 @@ export class CollectionTracker<T extends HasId> {
         this.onUpdate();
     }
 
-    add(item: T, options: { suppressUpdate?: boolean, suppressSync? } = {}) {
+    add(item: T, options: { suppressUpdate?: boolean; suppressSync? } = {}) {
         return this.update(item.id, item, options);
     }
 
@@ -67,5 +70,3 @@ export class CollectionTracker<T extends HasId> {
         this.index.remove(id);
     }
 }
-
-
