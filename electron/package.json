@@ -1,7 +1,7 @@
 {
   "name": "tdo",
-  "version": "1.0.0",
-  "description": "Electron wrapper for tdo",
+  "version": "1.0.1",
+  "description": "Electron wrapper for tdoapp.com",
   "main": "main.js",
   "scripts": {
     "start": "electron .",

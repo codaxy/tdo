@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu, Tray, globalShortcut } = require("electron");
+const { app, BrowserWindow, Menu, Tray, globalShortcut, shell } = require("electron");
 
 const path = require("path");
 
@@ -36,7 +36,15 @@ function initialize() {
         // mainWindow.loadFile('index.html')
 
         // we are loading app from the url instead of local app
-        mainWindow.loadURL("https://tdo.cxjs.io/");
+        mainWindow.loadURL("https://tdo.cxjs.io/");        
+          
+        //load external urls in the browser
+        mainWindow.webContents.on('new-window', (event, url) => {
+            if (isExternalURL(url)) {
+                event.preventDefault();
+                shell.openExternal(url);
+            }
+        })
 
         // Open the DevTools.
         // mainWindow.webContents.openDevTools()
@@ -130,11 +138,11 @@ function initialize() {
         const ret = globalShortcut.register("Control+Shift+insert", () => showWindow());
 
         if (!ret) {
-            console.log("registration failed");
+            console.log("Keyboard shortcut registration failed");
         }
 
         // Check whether a shortcut is registered.
-        console.log(globalShortcut.isRegistered("Control+Shift+insert"));
+        //console.log(globalShortcut.isRegistered("Control+Shift+insert"));
     }
 
     // This method will be called when Electron has finished
@@ -264,3 +272,8 @@ function handleSquirrelEvent(application) {
             return true;
     }
 };
+
+function isExternalURL(url) {
+    if (url.startsWith("https://tdo.cxjs.io/")) return false;
+    return url.startsWith('http:') || url.startsWith('https:');
+  }
