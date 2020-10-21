@@ -11,8 +11,10 @@
   "author": "Nebojsa Peric",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.2",
-    "electron-builder": "^21.2.0"
+    "electron": "10.1.3",
+    "electron-builder": "^22.9.1",
+    "electron-nightly": "^12.0.0-nightly.20201015",
+    "rimraf": "^3.0.2"
   },
   "build": {
     "appId": "tdo.cxjs.io",

@@ -22,9 +22,8 @@ function initialize() {
             width: 1400,
             height: 800,
             webPreferences: {
-                nodeIntegration: true,
-                nativeWindowOpen: true
-
+                nodeIntegration: false,
+                nativeWindowOpen: true,
             },
             icon: getIconPath("favicon64x64.png")
         });
@@ -36,15 +35,42 @@ function initialize() {
         // mainWindow.loadFile('index.html')
 
         // we are loading app from the url instead of local app
-        mainWindow.loadURL("https://tdo.cxjs.io/");        
+        mainWindow.loadURL("https://tdo.cxjs.io/", { userAgent: "Chrome" });        
           
         //load external urls in the browser
-        mainWindow.webContents.on('new-window', (event, url) => {
+        mainWindow.webContents.on('new-window', (event, url, frameName, disposition, options, additionalFeatures) => {
             if (isExternalURL(url)) {
                 event.preventDefault();
                 shell.openExternal(url);
             }
-        })
+            else {               
+                // open window as modal
+                event.preventDefault();                
+                Object.assign(options, {
+                    modal: true,
+                    parent: mainWindow,
+                    javascript: true,
+                    minimizable: false,
+                    maximizable: false,
+                    maxWidth: 1300,
+                    maxHeight: 700,
+                    width: 1000,
+                    height: 700,
+                    center: true,
+                });
+                let modal = new BrowserWindow(options);
+                modal.webContents.on('new-window', (event, url) => {
+                    event.preventDefault();
+                    shell.openExternal(url);
+                });                
+                modal.removeMenu();
+                modal.webContents.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) electron/1.0.0 Chrome/53.0.2785.113 Electron/1.4.3 Safari/537.36";
+                event.newGuest = modal;
+                setTimeout(() => {
+                    modal.webContents.openDevTools();
+                }, 1000)
+            }
+        });
 
         // Open the DevTools.
         // mainWindow.webContents.openDevTools()
