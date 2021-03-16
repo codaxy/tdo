@@ -8,7 +8,7 @@ module.exports = {
             {
                 corejs: 3,
                 targets: {
-                    chrome: 66
+                      esmodules: true,
                 },
                 loose: true,
                 useBuiltIns: 'usage',
