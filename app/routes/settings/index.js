@@ -48,6 +48,14 @@ export default <cx>
 
         <h3>Custom CSS</h3>
 
+        <p style="display: flex; flex-wrap: wrap">
+            <a href onClick="matrixTheme" style="padding-right: 15px;">Matrix</a>
+            <a href onClick="darkTheme" style="padding-right: 15px;">Dark</a>
+            <a href onClick="paperboyTheme" style="padding-right: 15px;">Paperboy</a>
+            <a href onClick="defaultTheme" style="padding-right: 15px;">Default theme</a>
+            <a href onClick="capuccinoTheme" style="padding-right: 15px;">Capuccino</a>
+            <a href onClick="lightTheme">Light</a>
+        </p>
         <TextArea value:bind="settings.css" rows={20} style="width: 600px; width:100%" />
     </div>
 </cx>;

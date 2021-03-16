@@ -6,6 +6,7 @@ import { UserBoardTracker } from "../data/UserBoardsTracker";
 import { registerKeyboardShortcuts } from "./keyboard-shortcuts";
 import { Toast, Button, Text } from "cx/widgets";
 import { firebase } from "./../data/db/firebase";
+import { showUndoToast } from "../components/toasts";
 
 
 //TODO: For anonymous users save to local storage
@@ -163,21 +164,12 @@ export default ({ store, get, set, init }) => {
             let boards = boardTracker.getActiveBoards();
             History.pushState({}, null, boards.length > 0 ? "~/b/" + boards[0].id : "~/")
 
-            Toast.create({
-                mod: 'warning',
-                timeout: 3000,
-                items: (
-                    <cx>
-                        <div ws>
-                            <Text value={`Board ${board.name} has been deleted`} />
-                            <Button dismiss text="Undo" onClick={() => this.onUndoDeleteBoard(board.id)} />
-                        </div>
-                    </cx>
-                )
-            }).open();
+            showUndoToast(
+                `Board ${board.name} has been deleted`,
+                () => this.undoDeleteBoard(board.id));
         },
 
-        onUndoDeleteBoard(id) {
+        undoDeleteBoard(id) {
             boardTracker.update(id, {
                 deleted: false,
                 deletedDate: null

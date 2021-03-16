@@ -80,6 +80,10 @@
   vertical-align: middle;
 }
 
+pre {
+  overflow: hidden;
+}
+
 @import "board/index";
 @import "settings/index";
 @import "help/index";

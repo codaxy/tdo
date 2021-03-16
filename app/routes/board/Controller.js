@@ -6,12 +6,11 @@ import { Toast, Button, Text } from "cx/widgets";
 import uid from "uid";
 import { BoardTasksTracker } from "../../data/BoardTasksTracker";
 import { BoardListsTracker } from "../../data/BoardListsTracker";
-import {getAdvancedSearchQueryPredicate} from "../../util/getAdvancedSearchQueryPredicate";
-
+import { getAdvancedSearchQueryPredicate } from "../../util/getAdvancedSearchQueryPredicate";
+import { showUndoToast } from "../../components/toasts";
 const OneDayMs = 24 * 60 * 60 * 1000;
 
 export default ({ store, ref, get, set }) => {
-
     const lists = ref("$page.lists").as(ArrayRef);
     const tasks = ref("$page.tasks").as(ArrayRef);
     const boardId = get("$route.boardId");
@@ -67,37 +66,30 @@ export default ({ store, ref, get, set }) => {
     }
 
     function deleteTask(task) {
-
         let listTasks = getVisibleListTasks(task.listId);
         let taskIndex = listTasks.findIndex(t => t.id == task.id);
         let nextTask = listTasks[taskIndex + 1] || listTasks[taskIndex - 1];
 
-        batchUpdatesAndNotify(() => {
-            taskTracker.update(task.id, {
-                deleted: true,
-                deletedDate: new Date().toISOString()
-            }, { suppressUpdate: true });
-            taskTracker.reorderList(task.listId, true);
-            refreshTasks();
-        }, () => {
-            if (nextTask) {
-                activateTask(nextTask.id);
-                console.log(nextTask);
+        batchUpdatesAndNotify(
+            () => {
+                taskTracker.update(
+                    task.id,
+                    {
+                        deleted: true,
+                        deletedDate: new Date().toISOString()
+                    },
+                    { suppressUpdate: true }
+                );
+                taskTracker.reorderList(task.listId, true);
+                refreshTasks();
+            },
+            () => {
+                if (nextTask) {
+                    activateTask(nextTask.id);
+                    console.log(nextTask);
+                }
             }
-        });
-
-        Toast.create({
-            mod: 'warning',
-            timeout: 4000,
-            items: (
-                <cx>
-                    <div ws>
-                        <Text value={`Task ${task.name} has been deleted`} />
-                        <Button dismiss text="Undo" onClick={() => undoDeleteTask(task.id, task.listId)} />
-                    </div>
-                </cx>
-            )
-        }).open();
+        );
     }
 
     function undoDeleteTask(id, listId) {
@@ -183,21 +175,12 @@ export default ({ store, ref, get, set }) => {
             listTracker.reorder(true);
             listTracker.forceUpdate();
 
-            Toast.create({
-                mod: 'warning',
-                timeout: 3000,
-                items: (
-                    <cx>
-                        <div ws>
-                            <Text value={`List ${list.name} has been deleted`} />
-                            <Button dismiss text="Undo" onClick={() => this.onUndoDeleteList(id)} />
-                        </div>
-                    </cx>
-                )
-            }).open();
+            showUndoToast(`List ${list.name} has been deleted`,
+                () => this.undoDeleteList(id)
+            );
         },
 
-        onUndoDeleteList(id) {
+        undoDeleteList(id) {
             listTracker.update(id, {
                 deleted: false,
                 deletedDate: null
@@ -212,6 +195,9 @@ export default ({ store, ref, get, set }) => {
 
         onDeleteTask(task) {
             deleteTask(task);
+
+            showUndoToast(`Task ${task.name} has been deleted.`,
+                () => undoDeleteTask(task.id, task.listId));
         },
 
         onAddTask(e, { store }) {
@@ -332,7 +318,7 @@ export default ({ store, ref, get, set }) => {
                     e.preventDefault();
                     e.stopPropagation();
 
-                    deleteTask($task);
+                    this.onDeleteTask($task);
 
                     break;
 
@@ -438,4 +424,4 @@ export default ({ store, ref, get, set }) => {
             });
         }
     };
-}
+};
