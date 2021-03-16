@@ -1,6 +1,6 @@
 import { ShallowIndex } from "./ShallowIndex";
 import { HasId } from "./HasId";
-import { firestore } from "firebase";
+import {firestore} from "../data/db/firestore"
 
 export class CollectionTracker<T extends HasId> {
     collection: firestore.CollectionReference;
