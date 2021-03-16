@@ -27,7 +27,7 @@ module.exports = {
             include: /[\\\/](app|cx-redux|cx|redux|redux-thunk|lodash)[\\\/]/,
             exclude: /\@firebase[\\\/]app/,
             loader: 'babel-loader',
-            query: babelCfg
+            options: babelCfg
         }, {
             test: /\.(png|svg)$/,
             loader: 'url-loader'

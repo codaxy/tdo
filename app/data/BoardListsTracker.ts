@@ -1,5 +1,5 @@
 import { CollectionTracker } from "./CollectionTracker";
-import { firestore } from "./db/firestore";
+import { firestore } from "../data/db/firestore" ;
 import { ShallowIndex } from "./ShallowIndex";
 import { List } from "./List";
 
