@@ -1,5 +1,6 @@
 import { HtmlElement, Tab, TextField, Route, Menu, MenuItem, Submenu, Sandbox, Repeater, PureContainer, Link } from 'cx/widgets';
 import { FirstVisibleChildLayout, executeKeyboardShortcuts } from 'cx/ui';
+import "../components/icons";
 
 import Board from './board';
 import Settings from './settings';
@@ -71,7 +72,7 @@ const MenuItems = <cx>
                 <a text-tpl="{user.displayName}" />
                 <MenuItem putInto="dropdown">
                     <Link href="#" onClick="signOut">Sign Out</Link>
-                </MenuItem> 
+                </MenuItem>
             </Submenu>
         </MenuItem>
     </PureContainer>
@@ -100,7 +101,7 @@ export default <cx>
                         visible: {bind: "settings.showTooltips"},
                         placement: "down",
                         text: "Filter displayed tasks with keywords and boolean search using the &&/|| or AND/OR operators. e.g: item 1 AND/OR item 2",
-                    }}                    
+                    }}
                 />
 
                 <Menu horizontal>
@@ -117,7 +118,7 @@ export default <cx>
                     </MenuItem>
                 </Menu>
             </header>
-            <main 
+            <main
             class="cxe-layout-main"
             layout={FirstVisibleChildLayout}
             >
