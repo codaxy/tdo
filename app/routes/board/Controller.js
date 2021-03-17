@@ -1,5 +1,5 @@
 import { FocusManager, batchUpdatesAndNotify, batchUpdates } from "cx/ui";
-import { ArrayRef } from "cx/data";
+import { ArrayRef, } from "cx/data";
 import { KeyCode, closest } from "cx/util";
 import { Toast, Button, Text } from "cx/widgets";
 
@@ -19,7 +19,7 @@ export default ({ store, ref, get, set }) => {
 
     const refreshTasks = () => {
         let search = get("search");
-        let searchPredicate = search && search.query ? getAdvancedSearchQueryPredicate( search.query) : null;
+        let searchPredicate = search && search.query ? getAdvancedSearchQueryPredicate(search.query) : null;
 
         tasks.set(taskTracker.index.filter(t => {
             if (t.deleted)
@@ -146,13 +146,14 @@ export default ({ store, ref, get, set }) => {
             let id = uid();
             listTracker.update(
                 id, {
-                    id: id,
-                    name: "New List",
-                    edit: true,
-                    createdDate: new Date().toISOString(),
-                    boardId: boardId,
-                    order: getListsSorted().length
-                });
+                id: id,
+                name: "New List",
+                edit: true,
+                createdDate: new Date().toISOString(),
+                boardId: boardId,
+                order: getListsSorted().length,
+                collapsed: true
+            });
         },
 
         onSaveList(e, { store }) {
@@ -422,6 +423,19 @@ export default ({ store, ref, get, set }) => {
             listTracker.update(store.get("$list.id"), {
                 edit: true
             });
-        }
+        },
+
+
+        showList(e, { store }) {
+            if (store.get("$list.collapsed")) {
+                listTracker.update(store.get("$list.id"), {
+                    collapsed: false
+                });
+            } else {
+                listTracker.update(store.get("$list.id"), {
+                    collapsed: true
+                });
+            }
+        },
     };
 };
