@@ -1,6 +1,6 @@
 {
   "name": "tdo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Electron wrapper for tdoapp.com",
   "main": "main.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "build": {
     "appId": "tdo.cxjs.io",
     "productName": "tdo",
-    "copyright": "Copyright © 2019 Codaxy d.o.o.",
+    "copyright": "Copyright © 2021 Codaxy d.o.o.",
     "nsis": {
       "createStartMenuShortcut": true,
       "createDesktopShortcut": true

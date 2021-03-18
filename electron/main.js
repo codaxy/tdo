@@ -35,17 +35,17 @@ function initialize() {
         // mainWindow.loadFile('index.html')
 
         // we are loading app from the url instead of local app
-        mainWindow.loadURL("https://tdo.cxjs.io/", { userAgent: "Chrome" });        
-          
+        mainWindow.loadURL("https://tdo.cxjs.io/", { userAgent: "Chrome" });
+
         //load external urls in the browser
         mainWindow.webContents.on('new-window', (event, url, frameName, disposition, options, additionalFeatures) => {
             if (isExternalURL(url)) {
                 event.preventDefault();
                 shell.openExternal(url);
             }
-            else {               
+            else {
                 // open window as modal
-                event.preventDefault();                
+                event.preventDefault();
                 Object.assign(options, {
                     modal: true,
                     parent: mainWindow,
@@ -62,13 +62,10 @@ function initialize() {
                 modal.webContents.on('new-window', (event, url) => {
                     event.preventDefault();
                     shell.openExternal(url);
-                });                
+                });
                 modal.removeMenu();
                 modal.webContents.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) electron/1.0.0 Chrome/53.0.2785.113 Electron/1.4.3 Safari/537.36";
                 event.newGuest = modal;
-                setTimeout(() => {
-                    modal.webContents.openDevTools();
-                }, 1000)
             }
         });
 
@@ -92,7 +89,7 @@ function initialize() {
         // })
 
         // Emitted when the window is closed.
-        mainWindow.on("closed", function() {
+        mainWindow.on("closed", function () {
             // Dereference the window object, usually you would store windows
             // in an array if your app supports multi windows, this is the time
             // when you should delete the corresponding element.
@@ -145,7 +142,7 @@ function initialize() {
                 label: 'Developer tools', click: () => {
                     mainWindow.webContents.openDevTools();
                 }
-            }, 
+            },
         ]);
 
         tray.setToolTip("Tdo...");
@@ -180,18 +177,18 @@ function initialize() {
         registerGlobalShortcuts();
     });
 
-    app.on("before-quit", function() {
+    app.on("before-quit", function () {
         isQuiting = true;
     });
 
     // Quit when all windows are closed.
-    app.on("window-all-closed", function() {
+    app.on("window-all-closed", function () {
         // On macOS it is common for applications and their menu bar
         // to stay active until the user quits explicitly with Cmd + Q
         if (process.platform !== "darwin") app.quit();
     });
 
-    app.on("activate", function() {
+    app.on("activate", function () {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
         if (mainWindow === null) createWindow();
@@ -302,4 +299,4 @@ function handleSquirrelEvent(application) {
 function isExternalURL(url) {
     if (url.startsWith("https://tdo.cxjs.io/")) return false;
     return url.startsWith('http:') || url.startsWith('https:');
-  }
+}
