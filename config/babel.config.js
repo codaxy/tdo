@@ -1,17 +1,17 @@
 module.exports = {
-    "cacheDirectory": true,
-    "cacheIdentifier": "4",
-    "presets": [
+    cacheDirectory: true,
+    cacheIdentifier: "4",
+    presets: [
         "@babel/preset-typescript",
         [
             "cx-env",
             {
                 corejs: 3,
                 targets: {
-                      esmodules: true,
+                    esmodules: true
                 },
                 loose: true,
-                useBuiltIns: 'usage',
+                useBuiltIns: "usage",
                 modules: false,
                 cx: {
                     imports: {
@@ -21,6 +21,5 @@ module.exports = {
             }
         ]
     ],
-    "plugins": []
+    plugins: []
 };
-

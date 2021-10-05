@@ -1,27 +1,26 @@
-var webpack = require('webpack'),
-    merge = require('webpack-merge'),
-    common = require('./webpack.config');
+var webpack = require("webpack"),
+    { merge } = require("webpack-merge"),
+    common = require("./webpack.config");
 
 var specific = {
-    mode: 'development',
+    mode: "development",
     module: {
         rules: [
             {
-            test: /\.scss$/,
-            use: ["style-loader", "css-loader", "sass-loader"]
-        }, {
-            test: /\.css$/,
-            use: ["style-loader", "css-loader"]
-        }
-    ]
+                test: /\.scss$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
+            }
+        ]
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
+    plugins: [new webpack.HotModuleReplacementPlugin()],
     output: {
-        publicPath: '/'
+        publicPath: "/"
     },
-    devtool: 'eval',
+    devtool: "eval",
     devServer: {
         hot: true,
         port: 8088,

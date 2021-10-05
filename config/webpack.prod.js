@@ -1,10 +1,10 @@
 var webpack = require("webpack"),
     MiniCssExtractPlugin = require("mini-css-extract-plugin"),
     CopyWebpackPlugin = require("copy-webpack-plugin"),
-    merge = require("webpack-merge"),
+    { merge } = require("webpack-merge"),
     common = require("./webpack.config"),
     path = require("path"),
-    WorkboxPlugin = require('workbox-webpack-plugin');
+    WorkboxPlugin = require("workbox-webpack-plugin");
 
 var specific = {
     mode: "production",
@@ -42,15 +42,17 @@ var specific = {
             chunkFilename: "[name].css"
         }),
         new WorkboxPlugin.GenerateSW({
-            // these options encourage the ServiceWorkers to get in there fast 
+            // these options encourage the ServiceWorkers to get in there fast
             // and not allow any straggling "old" SWs to hang around
             clientsClaim: true,
             skipWaiting: true,
             exclude: [/_redirects/],
-            runtimeCaching: [{
-                urlPattern: /^https/,
-                handler: "NetworkFirst"
-            }]
+            runtimeCaching: [
+                {
+                    urlPattern: /^https/,
+                    handler: "NetworkFirst"
+                }
+            ]
         })
     ],
 
@@ -60,16 +62,21 @@ var specific = {
 
     cache: {
         // 1. Set cache type to filesystem
-        type: 'filesystem',
+        type: "filesystem",
 
         buildDependencies: {
             // 2. Add your config as buildDependency to get cache invalidation on config change
-            config: [path.resolve(__dirname, 'config/webpack.config.js'), path.resolve(__dirname, 'config/webpack.dev.js'), path.resolve(__dirname, 'config/webpack.prod.js'), path.resolve(__dirname, 'config/babel-config.js')],
+            config: [
+                path.resolve(__dirname, "config/webpack.config.js"),
+                path.resolve(__dirname, "config/webpack.dev.js"),
+                path.resolve(__dirname, "config/webpack.prod.js"),
+                path.resolve(__dirname, "config/babel-config.js")
+            ]
 
             // 3. If you have other things the build depends on you can add them here
             // Note that webpack, loaders and all modules referenced from your config are automatically added
-        },
-    },
+        }
+    }
 };
 
 module.exports = merge(common, specific);
