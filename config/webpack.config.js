@@ -2,7 +2,6 @@ const webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     path = require('path'),
     babelCfg = require("./babel.config"),
-    WorkboxPlugin = require('workbox-webpack-plugin'),
     paths = {
         root: path.join(__dirname, '../'),
         app: path.join(__dirname, '../app/'),
@@ -26,11 +25,13 @@ module.exports = {
             //add here any ES6 based library
             include: /[\\\/](app|cx-redux|cx|redux|redux-thunk|lodash)[\\\/]/,
             exclude: /\@firebase[\\\/]app/,
-            loader: 'babel-loader',
-            options: babelCfg
+            use: {
+                loader: 'babel-loader',
+                options: { ...babelCfg },
+            },
         }, {
             test: /\.(png|svg)$/,
-            loader: 'url-loader'
+            use: 'url-loader'
         }]
     },
     entry: {
